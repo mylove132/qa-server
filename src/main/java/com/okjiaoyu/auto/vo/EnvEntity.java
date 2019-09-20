@@ -1,6 +1,6 @@
 package com.okjiaoyu.auto.vo;
 
-public class Env {
+public class EnvEntity {
     private Integer id;
 
     private String env;

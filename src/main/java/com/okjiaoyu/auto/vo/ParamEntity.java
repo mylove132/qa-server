@@ -2,14 +2,14 @@ package com.okjiaoyu.auto.vo;
 
 import java.util.Date;
 
-public class Token {
+public class ParamEntity {
     private Integer id;
 
-    private String token;
+    private Date createTime;
 
     private Date updateTime;
 
-    private Integer userId;
+    private String param;
 
     public Integer getId() {
         return id;
@@ -19,12 +19,12 @@ public class Token {
         this.id = id;
     }
 
-    public String getToken() {
-        return token;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setToken(String token) {
-        this.token = token == null ? null : token.trim();
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getUpdateTime() {
@@ -35,11 +35,11 @@ public class Token {
         this.updateTime = updateTime;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getParam() {
+        return param;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setParam(String param) {
+        this.param = param == null ? null : param.trim();
     }
 }

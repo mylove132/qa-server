@@ -2,7 +2,7 @@ package com.okjiaoyu.auto.vo;
 
 import java.util.Date;
 
-public class Case {
+public class CaseEntity {
     private Integer id;
 
     private String name;

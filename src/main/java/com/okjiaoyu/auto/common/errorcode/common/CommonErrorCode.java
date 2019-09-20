@@ -11,6 +11,7 @@ public enum CommonErrorCode implements BaseErrorCode {
 
     OP_SUCCESS(0, "operation.success"),
     OP_FAILED(-1, "operation.failed"),
+    PARAM_NULL(101, "参数不能为空"),
     ;
 
     private int code;

@@ -1,11 +1,11 @@
 package com.okjiaoyu.auto.config;
 import com.okjiaoyu.auto.annotion.AuthPermission;
-import com.okjiaoyu.auto.dao.RoleMapper;
-import com.okjiaoyu.auto.dao.TokenMapper;
-import com.okjiaoyu.auto.dao.UserMapper;
-import com.okjiaoyu.auto.vo.Role;
-import com.okjiaoyu.auto.vo.Token;
-import com.okjiaoyu.auto.vo.User;
+import com.okjiaoyu.auto.dao.RoleEntityMapper;
+import com.okjiaoyu.auto.dao.TokenEntityMapper;
+import com.okjiaoyu.auto.dao.UserEntityMapper;
+import com.okjiaoyu.auto.vo.RoleEntity;
+import com.okjiaoyu.auto.vo.TokenEntity;
+import com.okjiaoyu.auto.vo.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +26,11 @@ import java.util.Date;
 public class SecurityInterceptor implements HandlerInterceptor {
 
     @Autowired
-    private TokenMapper tokenMapper;
+    private TokenEntityMapper tokenEntityMapper;
     @Autowired
-    private UserMapper userMapper;
+    private UserEntityMapper userEntityMapper;
     @Autowired
-    private RoleMapper roleMapper;
+    private RoleEntityMapper roleEntityMapper;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -46,7 +46,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
             // 如果标记了注解，则判断权限
             if (requiredPermission != null) {
                 String token = request.getHeader("token");
-                Token tk = tokenMapper.selectByToken(token);
+                TokenEntity tk = tokenEntityMapper.selectByToken(token);
                 if (token == null) {
                     response.sendError(HttpStatus.FORBIDDEN.value(), "header请传入token");
                     return false;
@@ -65,14 +65,14 @@ public class SecurityInterceptor implements HandlerInterceptor {
                     return true;
                 } else {
                     Integer userId = tk.getUserId();
-                    User user = userMapper.selectByPrimaryKey(userId);
+                    UserEntity user = userEntityMapper.selectByPrimaryKey(userId);
                     if (user == null) {
                         log.error("用户id{}不存在",userId);
                         response.sendError(HttpStatus.FORBIDDEN.value(), "token用户不存在");
                         return false;
                     }
                     Integer roleId = user.getRoleId();
-                    Role role = roleMapper.selectByPrimaryKey(roleId);
+                    RoleEntity role = roleEntityMapper.selectByPrimaryKey(roleId);
                     if (role == null) {
                         log.error("用户角色id{}不存在",roleId);
                         response.sendError(HttpStatus.FORBIDDEN.value(), "用户角色不存在");
@@ -85,7 +85,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
                             return false;
                         }else {
                             tk.setUpdateTime(new Date());
-                            tokenMapper.updateByPrimaryKeySelective(tk);
+                            tokenEntityMapper.updateByPrimaryKeySelective(tk);
                             return true;
                         }
                     }

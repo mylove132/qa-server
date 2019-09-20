@@ -1,6 +1,6 @@
 package com.okjiaoyu.auto.vo;
 
-public class Role {
+public class RoleEntity {
     private Integer id;
 
     private String role;

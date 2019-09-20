@@ -1,8 +1,10 @@
 package com.okjiaoyu.auto.vo;
 
+import com.okjiaoyu.auto.util.DateUtil;
 import java.util.Date;
+import java.util.Map;
 
-public class Module {
+public class ModuleEntity {
     private Integer id;
 
     private String name;
@@ -12,6 +14,10 @@ public class Module {
     private Integer envId;
 
     private Date createTime;
+
+    private Map<String,Object> project;
+
+    private EnvEntity env;
 
     public Integer getId() {
         return id;
@@ -51,5 +57,28 @@ public class Module {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+
+
+    public EnvEntity getEnv() {
+        return env;
+    }
+
+    public void setEnv(EnvEntity env) {
+        this.env = env;
+    }
+
+    @Override
+    public String toString() {
+        return "ModuleEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", projectId=" + projectId +
+                ", envId=" + envId +
+                ", createTime=" + DateUtil.dateFormat(createTime) +
+                ", project=" + project +
+                ", env=" + env +
+                '}';
     }
 }

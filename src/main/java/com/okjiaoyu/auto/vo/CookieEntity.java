@@ -2,18 +2,14 @@ package com.okjiaoyu.auto.vo;
 
 import java.util.Date;
 
-public class User {
+public class CookieEntity {
     private Integer id;
-
-    private String name;
-
-    private String email;
-
-    private Integer roleId;
 
     private Date createTime;
 
     private Date updateTime;
+
+    private String value;
 
     public Integer getId() {
         return id;
@@ -21,30 +17,6 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
     }
 
     public Date getCreateTime() {
@@ -61,5 +33,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value == null ? null : value.trim();
     }
 }

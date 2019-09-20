@@ -2,18 +2,14 @@ package com.okjiaoyu.auto.vo;
 
 import java.util.Date;
 
-public class Jmeter {
+public class HeaderEntity {
     private Integer id;
-
-    private Integer preTime;
-
-    private Integer preNumber;
-
-    private Integer caseId;
 
     private Date createTime;
 
     private Date updateTime;
+
+    private String value;
 
     public Integer getId() {
         return id;
@@ -21,30 +17,6 @@ public class Jmeter {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getPreTime() {
-        return preTime;
-    }
-
-    public void setPreTime(Integer preTime) {
-        this.preTime = preTime;
-    }
-
-    public Integer getPreNumber() {
-        return preNumber;
-    }
-
-    public void setPreNumber(Integer preNumber) {
-        this.preNumber = preNumber;
-    }
-
-    public Integer getCaseId() {
-        return caseId;
-    }
-
-    public void setCaseId(Integer caseId) {
-        this.caseId = caseId;
     }
 
     public Date getCreateTime() {
@@ -61,5 +33,13 @@ public class Jmeter {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value == null ? null : value.trim();
     }
 }

@@ -7,7 +7,7 @@ package com.okjiaoyu.auto.controller;
  * Modify date: 2019-09-19:10:40
  */
 import com.okjiaoyu.auto.util.RedisUtil;
-import com.okjiaoyu.auto.vo.User;
+import com.okjiaoyu.auto.vo.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +33,7 @@ public class RedisController {
 
     @RequestMapping("set")
     public boolean redisset(String key, String value){
-        User userEntity =new User();
+        UserEntity userEntity =new UserEntity();
         userEntity.setId(1);
         userEntity.setName("zhangsan");
         userEntity.setCreateTime(new Date());
@@ -43,7 +43,7 @@ public class RedisController {
 
     @RequestMapping("setList")
     public boolean redissetList(String key){
-        User userEntity =new User();
+        UserEntity userEntity =new UserEntity();
         userEntity.setId(1);
         userEntity.setName("zhangsan");
         userEntity.setCreateTime(new Date());

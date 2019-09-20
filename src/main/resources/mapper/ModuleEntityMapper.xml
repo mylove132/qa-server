@@ -1,33 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.ModuleMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.Module">
+<mapper namespace="com.okjiaoyu.auto.dao.ModuleEntityMapper">
+  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.ModuleEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="project_id" jdbcType="INTEGER" property="projectId" />
     <result column="env_id" jdbcType="INTEGER" property="envId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <collection property="project" select="queryProject" column="project_id"></collection>
+    <collection property="env" select="queryEnv" column="env_id"></collection>
   </resultMap>
   <sql id="Base_Column_List">
     id, name, project_id, env_id, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from entity_module
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="queryModuleList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from entity_module
+  </select>
+
+  <select id="queryProject" parameterType="java.lang.Integer" resultType="java.util.Map">
+    select * from entity_project
+    where id = #{projectId}
+    ORDER BY id
+  </select>
+
+
+  <select id="queryEnv" parameterType="java.lang.Integer" resultType="com.okjiaoyu.auto.vo.EnvEntity">
+    select * from entity_env
+    where id = #{envId}
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from entity_module
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.Module">
-    insert into entity_module (id, name, project_id, 
+  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.ModuleEntity">
+    insert into entity_module (id, name, project_id,
       env_id, create_time)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{projectId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{projectId,jdbcType=INTEGER},
       #{envId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.Module">
+  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.ModuleEntity">
     insert into entity_module
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +86,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.Module">
+  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.ModuleEntity">
     update entity_module
     <set>
       <if test="name != null">
@@ -82,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.Module">
+  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.ModuleEntity">
     update entity_module
     set name = #{name,jdbcType=VARCHAR},
       project_id = #{projectId,jdbcType=INTEGER},

@@ -1,13 +1,9 @@
 package com.okjiaoyu.auto.vo;
 
-import java.util.List;
-
-public class Project {
+public class CaseTypeEntity {
     private Integer id;
 
     private String name;
-
-    private List<Module> moduleList;
 
     public Integer getId() {
         return id;
@@ -23,13 +19,5 @@ public class Project {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public List<Module> getModuleList() {
-        return moduleList;
-    }
-
-    public void setModuleList(List<Module> moduleList) {
-        this.moduleList = moduleList;
     }
 }
