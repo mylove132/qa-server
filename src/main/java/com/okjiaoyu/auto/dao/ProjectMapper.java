@@ -1,9 +1,9 @@
 package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.Project;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
+import java.util.List;
+
 public interface ProjectMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +16,6 @@ public interface ProjectMapper {
     int updateByPrimaryKeySelective(Project record);
 
     int updateByPrimaryKey(Project record);
+
+    List<Project> queryProject();
 }
