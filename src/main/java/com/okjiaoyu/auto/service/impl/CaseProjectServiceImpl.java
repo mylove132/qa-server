@@ -1,12 +1,17 @@
 package com.okjiaoyu.auto.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.okjiaoyu.auto.common.BaseResponse;
+import com.okjiaoyu.auto.common.ErrorResponse;
+import com.okjiaoyu.auto.common.SuccessResponse;
+import com.okjiaoyu.auto.common.errorcode.cases.ProjectErrorCode;
 import com.okjiaoyu.auto.dao.ProjectMapper;
 import com.okjiaoyu.auto.service.CaseProjectService;
 import com.okjiaoyu.auto.vo.Project;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,5 +34,16 @@ public class CaseProjectServiceImpl implements CaseProjectService {
         PageHelper.startPage(pageNum, pageSize);
         List<Project> list=projectMapper.queryProject();
         return list;
+    }
+
+    @Transactional
+    @Override
+    public BaseResponse addProject(Project project) {
+        try {
+            projectMapper.insert(project);
+            return new SuccessResponse(true);
+        }catch (Exception e){
+            return new ErrorResponse(ProjectErrorCode.ADD_PROJECT_FAIL);
+        }
     }
 }

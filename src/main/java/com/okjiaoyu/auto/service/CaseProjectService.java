@@ -1,4 +1,5 @@
 package com.okjiaoyu.auto.service;
+import com.okjiaoyu.auto.common.BaseResponse;
 import com.okjiaoyu.auto.vo.Project;
 
 import java.util.List;
@@ -12,4 +13,6 @@ import java.util.List;
 public interface CaseProjectService {
 
     List<Project> caseProjectList(int pageNum, int pageSize);
+
+    BaseResponse addProject(Project project);
 }

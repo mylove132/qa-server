@@ -47,4 +47,10 @@ public class CaseController {
         log.info("获取项目列表，返回结果：{}",projects);
         return new SuccessResponse(new PageInfo(projects));
     }
+
+    @RequestMapping(value = "/project",method = RequestMethod.POST)
+    public BaseResponse projectCrontroller(Project project){
+        log.info("添加case项目：{]", project.getName());
+        return caseProjectService.addProject(project);
+    }
 }
