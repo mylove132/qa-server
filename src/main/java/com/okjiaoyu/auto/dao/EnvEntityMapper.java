@@ -2,6 +2,8 @@ package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.EnvEntity;
 
+import java.util.List;
+
 public interface EnvEntityMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface EnvEntityMapper {
     int updateByPrimaryKeySelective(EnvEntity record);
 
     int updateByPrimaryKey(EnvEntity record);
+
+    List<EnvEntity> queryEnvList();
 }

@@ -13,7 +13,7 @@ public class ModuleEntity {
 
     private Integer envId;
 
-    private Date createTime;
+    private String createTime;
 
     private Map<String,Object> project;
 
@@ -51,15 +51,13 @@ public class ModuleEntity {
         this.envId = envId;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
-
-
 
     public EnvEntity getEnv() {
         return env;
@@ -69,16 +67,11 @@ public class ModuleEntity {
         this.env = env;
     }
 
-    @Override
-    public String toString() {
-        return "ModuleEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", projectId=" + projectId +
-                ", envId=" + envId +
-                ", createTime=" + DateUtil.dateFormat(createTime) +
-                ", project=" + project +
-                ", env=" + env +
-                '}';
+    public Map<String, Object> getProject() {
+        return project;
+    }
+
+    public void setProject(Map<String, Object> project) {
+        this.project = project;
     }
 }

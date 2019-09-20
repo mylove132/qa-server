@@ -1,6 +1,7 @@
 package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.ModuleEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,10 @@ public interface ModuleEntityMapper {
     int updateByPrimaryKey(ModuleEntity record);
 
     List<ModuleEntity> queryModuleList();
+
+    List<ModuleEntity> filterModuleListByEnvId(Integer envId);
+
+    List<ModuleEntity> filterModuleListByProjectId(Integer projectId);
+
+    List<ModuleEntity> filterModuleListByProjectIdAndEnvId(@Param("projectId") Integer projectId, @Param("envId")Integer envId);
 }

@@ -6,12 +6,12 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="project_id" jdbcType="INTEGER" property="projectId" />
     <result column="env_id" jdbcType="INTEGER" property="envId" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
     <collection property="project" select="queryProject" column="project_id"></collection>
     <collection property="env" select="queryEnv" column="env_id"></collection>
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, project_id, env_id, create_time
+    id, name, project_id, env_id, DATE_FORMAT(create_time,"%Y-%m-%d %H:%i:%s") create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
@@ -112,4 +112,31 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+  <select id="filterModuleListByEnvId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM entity_module
+    where env_id = #{envId,jdbcType=INTEGER}
+    ORDER BY create_time DESC
+  </select>
+
+  <select id="filterModuleListByProjectId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM entity_module
+    where project_id = #{projectId,jdbcType=INTEGER}
+    ORDER BY create_time DESC
+  </select>
+
+  <select id="filterModuleListByProjectIdAndEnvId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM entity_module
+    where project_id = #{projectId,jdbcType=INTEGER}
+    AND env_id = #{envId,jdbcType=INTEGER}
+    ORDER BY create_time DESC
+  </select>
+
 </mapper>
