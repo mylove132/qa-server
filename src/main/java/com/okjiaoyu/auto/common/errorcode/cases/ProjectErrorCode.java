@@ -10,9 +10,6 @@ import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
  */
 public enum ProjectErrorCode implements BaseErrorCode{
     ADD_PROJECT_FAIL(2001, "添加项目失败"),
-    ENABLED(1, "record has been enabled"),
-    DELETES(9, "record has been deleted"),
-    CAS_LOGIN_FAIL(1001,"单点登录失败"),
             ;
 
     private int code;

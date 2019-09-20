@@ -43,6 +43,7 @@ public class CaseProjectServiceImpl implements CaseProjectService {
             projectMapper.insert(project);
             return new SuccessResponse(true);
         }catch (Exception e){
+            log.error("添加项目失败：{}",e.getMessage());
             return new ErrorResponse(ProjectErrorCode.ADD_PROJECT_FAIL);
         }
     }

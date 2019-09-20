@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef250bb-c895-49fb-b882-919bd39aa66c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CaseController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CaseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
+            <state relative-caret-position="545">
               <caret line="52" column="51" lean-forward="false" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaseProjectServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CaseProjectServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+            <state relative-caret-position="545">
+              <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="20" />
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -166,9 +164,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProjectMapper.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
       </list>
     </option>
   </component>
@@ -690,12 +688,12 @@
       <option name="presentableId" value="Default" />
       <updated>1568703941363</updated>
       <workItem from="1568703946928" duration="14730000" />
-      <workItem from="1568857913534" duration="27202000" />
+      <workItem from="1568857913534" duration="27308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41932000" />
+    <option name="totallyTimeSpent" value="42038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1200" y="-1040" width="1920" height="977" extended-state="0" />
@@ -1164,6 +1162,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="39" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="52" column="51" lean-forward="false" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1174,36 +1198,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="39" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="52" column="51" lean-forward="false" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+        <state relative-caret-position="545">
+          <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
