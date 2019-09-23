@@ -2,6 +2,8 @@ package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.CookieEntity;
 
+import java.util.List;
+
 public interface CookieEntityMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +18,8 @@ public interface CookieEntityMapper {
     int updateByPrimaryKeyWithBLOBs(CookieEntity record);
 
     int updateByPrimaryKey(CookieEntity record);
+
+    int updateBySystemId(CookieEntity record);
+
+    List<CookieEntity> queryCookieBySystemId(Long systemId);
 }

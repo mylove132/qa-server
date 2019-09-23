@@ -139,4 +139,16 @@
     ORDER BY create_time DESC
   </select>
 
+  <select id="filterModuleListByKeyword" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM entity_module
+    <where>
+      <if test="keyword != null">
+        name LIKE concat(concat('%',#{keyword}),'%')
+      </if>
+    </where>
+    ORDER BY create_time DESC
+  </select>
+
 </mapper>

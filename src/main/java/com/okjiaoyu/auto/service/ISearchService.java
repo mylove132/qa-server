@@ -18,4 +18,6 @@ public interface ISearchService {
     List<ModuleEntity> filterModuleListByProjectIdService(Integer projectId,int pageNum, int pageSize);
 
     List<ModuleEntity> filterModuleListByProjectIdAndEnvIdService(@Param("projectId") Integer projectId, @Param("envId")Integer envId,int pageNum, int pageSize);
+
+    List<ModuleEntity> filterModuleListByKeywordService(String keyword, Integer pageNum, Integer pageSize);
 }

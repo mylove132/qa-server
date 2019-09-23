@@ -2,7 +2,7 @@
 
 <configuration>
     <!--项目名称，用于log名的前缀-->
-    <property name="PROJECT_NAME" value="dubbo-api" />
+    <property name="PROJECT_NAME" value="qa-platform" />
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
     <property name="LOG_HOME" value="/Users/liuzhanhui/Documents/app/log/${PROJECT_NAME}" />
 
@@ -71,9 +71,9 @@
 
 
     <logger name="org.eclipse.jetty" level="WARN" />
-    <logger name="org.apache.dubbo" level="INFO"/> 
+    <logger name="org.apache.dubbo" level="INFO"/>
     <logger name="com.dangdang.config" level="DEBUG"/>
-    
+
     <logger name="ma.glasnost.orika" level="INFO" />
 
     <logger name="org.apache.skywalking" level="INFO"/>

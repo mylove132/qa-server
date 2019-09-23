@@ -1,5 +1,4 @@
 package com.okjiaoyu.auto.dao;
-
 import com.okjiaoyu.auto.vo.ModuleEntity;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,4 +24,7 @@ public interface ModuleEntityMapper {
     List<ModuleEntity> filterModuleListByProjectId(Integer projectId);
 
     List<ModuleEntity> filterModuleListByProjectIdAndEnvId(@Param("projectId") Integer projectId, @Param("envId")Integer envId);
+
+    List<ModuleEntity> filterModuleListByKeyword(@Param("keyword") String keyword);
+
 }

@@ -43,4 +43,11 @@ public class SearchServiceImpl implements ISearchService {
         List<ModuleEntity> moduleEntities = moduleEntityMapper.filterModuleListByProjectIdAndEnvId(projectId,envId);
         return moduleEntities;
     }
+
+    @Override
+    public List<ModuleEntity> filterModuleListByKeywordService(String keyword, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<ModuleEntity> moduleEntities = moduleEntityMapper.filterModuleListByKeyword(keyword);
+        return moduleEntities;
+    }
 }

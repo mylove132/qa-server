@@ -2,12 +2,15 @@ package com.okjiaoyu.auto.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.okjiaoyu.auto.common.BaseResponse;
+import com.okjiaoyu.auto.common.SuccessResponse;
 import com.okjiaoyu.auto.dao.ModuleEntityMapper;
 import com.okjiaoyu.auto.service.IModuleService;
+import com.okjiaoyu.auto.vo.CaseEntity;
 import com.okjiaoyu.auto.vo.ModuleEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,18 +35,22 @@ public class ModuleServiceImpl implements IModuleService {
         return list;
     }
 
+    @Transactional
     @Override
     public BaseResponse addModule(ModuleEntity moduleEntity) {
-        return null;
+        return new SuccessResponse(moduleEntityMapper.insertSelective(moduleEntity));
     }
 
+    @Transactional
     @Override
     public BaseResponse updateModule(ModuleEntity moduleEntity) {
-        return null;
+        return new SuccessResponse(moduleEntityMapper.updateByPrimaryKeySelective(moduleEntity));
     }
 
+    @Transactional
     @Override
     public BaseResponse delModule(Integer moduleId) {
-        return null;
+        return new SuccessResponse(moduleEntityMapper.deleteByPrimaryKey(moduleId));
     }
+
 }

@@ -9,7 +9,15 @@ public class CookieEntity {
 
     private Date updateTime;
 
-    private String value;
+    private Date expireTime;
+
+    private String cKey;
+
+    private Long systemId;
+
+    private Integer envId;
+
+    private String cValue;
 
     public Integer getId() {
         return id;
@@ -35,11 +43,43 @@ public class CookieEntity {
         this.updateTime = updateTime;
     }
 
-    public String getValue() {
-        return value;
+    public Date getExpireTime() {
+        return expireTime;
     }
 
-    public void setValue(String value) {
-        this.value = value == null ? null : value.trim();
+    public void setExpireTime(Date expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public String getcKey() {
+        return cKey;
+    }
+
+    public void setcKey(String cKey) {
+        this.cKey = cKey == null ? null : cKey.trim();
+    }
+
+    public Long getSystemId() {
+        return systemId;
+    }
+
+    public void setSystemId(Long systemId) {
+        this.systemId = systemId;
+    }
+
+    public Integer getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Integer envId) {
+        this.envId = envId;
+    }
+
+    public String getcValue() {
+        return cValue;
+    }
+
+    public void setcValue(String cValue) {
+        this.cValue = cValue == null ? null : cValue.trim();
     }
 }

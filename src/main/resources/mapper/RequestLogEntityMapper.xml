@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okjiaoyu.auto.dao.RequestLogEntityMapper">
+  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.RequestLogEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="way" jdbcType="VARCHAR" property="way" />
+    <result column="class_path" jdbcType="VARCHAR" property="classPath" />
+    <result column="method_name" jdbcType="VARCHAR" property="methodName" />
+    <result column="param" jdbcType="VARCHAR" property="param" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+    <result column="sessionid" jdbcType="VARCHAR" property="sessionid" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="finish_time" jdbcType="INTEGER" property="finishTime" />
+    <result column="return_time" jdbcType="TIMESTAMP" property="returnTime" />
+    <result column="return_data" jdbcType="VARCHAR" property="returnData" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ip, url, type, way, class_path, method_name, param, operation, sessionid, start_time, 
+    finish_time, return_time, return_data
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from entity_request_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from entity_request_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.RequestLogEntity">
+    insert into entity_request_log (id, ip, url, 
+      type, way, class_path, 
+      method_name, param, operation, 
+      sessionid, start_time, finish_time, 
+      return_time, return_data)
+    values (#{id,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{way,jdbcType=VARCHAR}, #{classPath,jdbcType=VARCHAR}, 
+      #{methodName,jdbcType=VARCHAR}, #{param,jdbcType=VARCHAR}, #{operation,jdbcType=VARCHAR}, 
+      #{sessionid,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{finishTime,jdbcType=INTEGER}, 
+      #{returnTime,jdbcType=TIMESTAMP}, #{returnData,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.RequestLogEntity">
+    insert into entity_request_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="way != null">
+        way,
+      </if>
+      <if test="classPath != null">
+        class_path,
+      </if>
+      <if test="methodName != null">
+        method_name,
+      </if>
+      <if test="param != null">
+        param,
+      </if>
+      <if test="operation != null">
+        operation,
+      </if>
+      <if test="sessionid != null">
+        sessionid,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="finishTime != null">
+        finish_time,
+      </if>
+      <if test="returnTime != null">
+        return_time,
+      </if>
+      <if test="returnData != null">
+        return_data,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="way != null">
+        #{way,jdbcType=VARCHAR},
+      </if>
+      <if test="classPath != null">
+        #{classPath,jdbcType=VARCHAR},
+      </if>
+      <if test="methodName != null">
+        #{methodName,jdbcType=VARCHAR},
+      </if>
+      <if test="param != null">
+        #{param,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionid != null">
+        #{sessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishTime != null">
+        #{finishTime,jdbcType=INTEGER},
+      </if>
+      <if test="returnTime != null">
+        #{returnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnData != null">
+        #{returnData,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.RequestLogEntity">
+    update entity_request_log
+    <set>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="way != null">
+        way = #{way,jdbcType=VARCHAR},
+      </if>
+      <if test="classPath != null">
+        class_path = #{classPath,jdbcType=VARCHAR},
+      </if>
+      <if test="methodName != null">
+        method_name = #{methodName,jdbcType=VARCHAR},
+      </if>
+      <if test="param != null">
+        param = #{param,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        operation = #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionid != null">
+        sessionid = #{sessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishTime != null">
+        finish_time = #{finishTime,jdbcType=INTEGER},
+      </if>
+      <if test="returnTime != null">
+        return_time = #{returnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnData != null">
+        return_data = #{returnData,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.RequestLogEntity">
+    update entity_request_log
+    set ip = #{ip,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      way = #{way,jdbcType=VARCHAR},
+      class_path = #{classPath,jdbcType=VARCHAR},
+      method_name = #{methodName,jdbcType=VARCHAR},
+      param = #{param,jdbcType=VARCHAR},
+      operation = #{operation,jdbcType=VARCHAR},
+      sessionid = #{sessionid,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      finish_time = #{finishTime,jdbcType=INTEGER},
+      return_time = #{returnTime,jdbcType=TIMESTAMP},
+      return_data = #{returnData,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

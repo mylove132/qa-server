@@ -25,6 +25,8 @@ public class CaseEntity {
 
     private Date updateTime;
 
+    private Integer moduleId;
+
     public Integer getId() {
         return id;
     }
@@ -111,5 +113,13 @@ public class CaseEntity {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(Integer moduleId) {
+        this.moduleId = moduleId;
     }
 }

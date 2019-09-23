@@ -3,8 +3,12 @@ package com.okjiaoyu.auto.common;
 
 import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
 import com.okjiaoyu.auto.common.errorcode.common.CommonErrorCode;
+import lombok.Data;
 
-public class ErrorResponse extends BaseResponse {
+@Data
+public class ErrorResponse<T> extends BaseResponse {
+
+    private T data;
 
     public ErrorResponse() {
         this.setCode(CommonErrorCode.OP_FAILED.key());
@@ -16,10 +20,19 @@ public class ErrorResponse extends BaseResponse {
         this.setCode(Integer.parseInt(baseErrorCode.key().toString()));
         this.setMessage(baseErrorCode.value().toString());
     }
+
+    public ErrorResponse(T data, String message) {
+        this.setCode(CommonErrorCode.OP_FAILED.key());
+        this.setData(data);
+        this.setMessage(message);
+    }
+
     public ErrorResponse(Integer code, String message, Object[] params) {
         this.setCode(code);
         String msg = getMessage(message, params);
         this.setMessage(msg);
     }
+
+
 
 }

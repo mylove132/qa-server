@@ -1,8 +1,11 @@
 package com.okjiaoyu.auto.config;
 
+import com.alibaba.fastjson.JSON;
+import com.okjiaoyu.auto.aop.CommonException;
 import com.okjiaoyu.auto.common.BaseResponse;
 import com.okjiaoyu.auto.common.ErrorResponse;
 import com.okjiaoyu.auto.common.errorcode.common.CommonErrorCode;
+import com.okjiaoyu.auto.vo.RequestExceptionEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,13 +23,11 @@ public class CommonControllerAdvice {
 
     /**
      * 全局异常处理，反正异常返回统一格式的map
-     * @param ex
      * @return
      */
     @ResponseBody
-    @ExceptionHandler(value = Exception.class)
-    public BaseResponse exceptionHandler(Exception ex){
-        log.error("系统错误信息：{}",ex.getMessage());
-        return new ErrorResponse(CommonErrorCode.OP_FAILED);
+    @ExceptionHandler(value = CommonException.class)
+    public BaseResponse exceptionHandler(CommonException exception){
+        return new ErrorResponse(exception.getRequestExceptionEntity(),exception.getMessage());
     }
 }

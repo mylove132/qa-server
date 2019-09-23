@@ -20,4 +20,15 @@ public class DateUtil {
         String date = DateUtil.dateFormat(new Date());
         System.out.println(date);
     }
+
+    public static Date parse(long timestramp){
+        Date date = new Date(timestramp);
+        return date;
+    }
+
+    public static Integer timeDifferLong(long startTime, long returnTime) {
+        double hours = (double)(returnTime-startTime)/3600/1000;
+        int mis = (int) (hours*3600);
+        return mis;
+    }
 }

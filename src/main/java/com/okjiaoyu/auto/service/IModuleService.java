@@ -1,6 +1,7 @@
 package com.okjiaoyu.auto.service;
 
 import com.okjiaoyu.auto.common.BaseResponse;
+import com.okjiaoyu.auto.vo.CaseEntity;
 import com.okjiaoyu.auto.vo.ModuleEntity;
 
 import java.util.List;

@@ -11,6 +11,7 @@ public class LoginRequestVo {
     private String url;
     private String username;
     private String password;
+    private Integer envId;
 
     public String getUrl() {
         return url;
@@ -34,5 +35,13 @@ public class LoginRequestVo {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Integer envId) {
+        this.envId = envId;
     }
 }

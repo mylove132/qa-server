@@ -2,6 +2,8 @@ package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.CaseEntity;
 
+import java.util.List;
+
 public interface CaseEntityMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface CaseEntityMapper {
     int updateByPrimaryKeySelective(CaseEntity record);
 
     int updateByPrimaryKey(CaseEntity record);
+
+    List<CaseEntity> queryCaseListWithModuleId(Integer moduleId);
 }
