@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="qa_platform" />
+        <module name="qa_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="qa_platform" target="1.8" />
+      <module name="qa_web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.okjiaoyu.auto.util;
 
 import com.google.common.base.Charsets;
+import com.okjiaoyu.auto.aop.CommonException;
 import com.okjiaoyu.auto.vo.request.LoginRequestVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
@@ -83,17 +84,17 @@ public class HttpRequestUtil {
             HttpResponse response = client.execute(get);
             int code = response.getStatusLine().getStatusCode();
             if (code >= 400)
-                throw new RuntimeException((new StringBuilder()).append("Could not access protected resource. Server returned http code: ").append(code).toString());
+                throw new CommonException((new StringBuilder()).append("Could not access protected resource. Server returned http code: ").append(code).toString());
             log.info("请求返回的结果：{}", EntityUtils.toString(response.getEntity()));
             return EntityUtils.toString(response.getEntity());
         }
         catch (ClientProtocolException e) {
             log.error("postRequest -- Client protocol exception!"+e.getMessage());
-            throw new RuntimeException("postRequest -- Client protocol exception!", e);
+            throw new CommonException("postRequest -- Client protocol exception!"+e.getMessage());
         }
         catch (IOException e) {
             log.error("请求错误："+e.getMessage());
-            throw new RuntimeException("postRequest -- IO error!", e);
+            throw new CommonException("请求错误："+e.getMessage());
         }
         finally {
             log.error("释放请求连接");
@@ -178,18 +179,18 @@ public class HttpRequestUtil {
             int code = response.getStatusLine().getStatusCode();
             if (code >= 400) {
                 log.error("post请求地址：{},返回code码：{}",path,code);
-                throw new RuntimeException(EntityUtils.toString(response.getEntity()));
+                throw new CommonException(EntityUtils.toString(response.getEntity()));
             }
             log.info("请求返回结果：{}",EntityUtils.toString(response.getEntity()));
             return EntityUtils.toString(response.getEntity());
         }
         catch (ClientProtocolException e) {
             log.error("post请求地址：{},错误信息：{}",path,e.getMessage());
-            throw new RuntimeException(e.getMessage());
+            throw new CommonException(e.getMessage());
         }
         catch (IOException e) {
             log.error("post请求地址：{},错误信息：{}",path,e.getMessage());
-            throw new RuntimeException(e.getMessage());
+            throw new CommonException(e.getMessage());
         }
         finally {
             post.releaseConnection();
@@ -229,26 +230,32 @@ public class HttpRequestUtil {
      */
     private static String casLoginGetTicket(LoginRequestVo loginRequestVo) throws Exception {
         Map<String,String> ltMap = getLoginRequestLTAndExecution(loginRequestVo.getUrl());
-        if (ltMap == null){
-            throw new RuntimeException("访问页面源码出现错误");
+        try {
+            if (ltMap == null) {
+                throw new RuntimeException("访问页面源码出现错误");
+            }
+            DefaultHttpClient httpClient = new SSLClient();
+            httpClient.getParams().setParameter(HttpMethodParams.USER_AGENT, "Mozilla/5.0");
+            HttpPost post = new HttpPost(loginRequestVo.getUrl());
+            List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+            nvps.add(new BasicNameValuePair("platformType", ltMap.get("platformType")));
+            nvps.add(new BasicNameValuePair("loginType", ltMap.get("loginType")));
+            nvps.add(new BasicNameValuePair("username", loginRequestVo.getUsername()));
+            nvps.add(new BasicNameValuePair("password", loginRequestVo.getPassword()));
+            nvps.add(new BasicNameValuePair("lt", ltMap.get("lt")));
+            nvps.add(new BasicNameValuePair("execution", ltMap.get("execution")));
+            nvps.add(new BasicNameValuePair("pictureVerifyCode", "performance"));
+            nvps.add(new BasicNameValuePair("_eventId", "submit"));
+            post.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
+
+            HttpResponse response = httpClient.execute(post);
+            String Location = response.getFirstHeader("Location").getValue();
+            if (Location != null && !"".equals(Location))
+                return Location;
+            return null;
+        }catch (CommonException e){
+            throw new CommonException("获取登录首页信息错误");
         }
-        DefaultHttpClient httpClient = new SSLClient();
-        httpClient.getParams().setParameter(HttpMethodParams.USER_AGENT, "Mozilla/5.0");
-        HttpPost post = new HttpPost(loginRequestVo.getUrl());
-        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("platformType", ltMap.get("platformType")));
-        nvps.add(new BasicNameValuePair("loginType", ltMap.get("loginType")));
-        nvps.add(new BasicNameValuePair("username", loginRequestVo.getUsername()));
-        nvps.add(new BasicNameValuePair("password", loginRequestVo.getPassword()));
-        nvps.add(new BasicNameValuePair("lt", ltMap.get("lt")));
-        nvps.add(new BasicNameValuePair("execution", ltMap.get("execution")));
-        nvps.add(new BasicNameValuePair("_eventId", "submit"));
-        post.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
-        HttpResponse response = httpClient.execute(post);
-        String Location = response.getFirstHeader("Location").getValue();
-        if (Location != null && !"".equals(Location))
-            return Location;
-        return null;
     }
 
 

@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>com.okjiaoyu.auto</groupId>
-    <artifactId>qa_platform</artifactId>
+    <artifactId>qa_web</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <name>qa_platform</name>
@@ -141,7 +141,7 @@
     </dependencies>
 
     <build>
-        <finalName>qa-platform</finalName>
+        <finalName>qa-web</finalName>
         <resources>
             <resource>
 

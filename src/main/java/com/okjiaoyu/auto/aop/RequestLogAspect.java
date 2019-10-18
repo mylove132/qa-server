@@ -3,7 +3,6 @@ package com.okjiaoyu.auto.aop;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.okjiaoyu.auto.annotion.Operation;
-import com.okjiaoyu.auto.config.CommonControllerAdvice;
 import com.okjiaoyu.auto.dao.RequestExceptionEntityMapper;
 import com.okjiaoyu.auto.dao.RequestLogEntityMapper;
 import com.okjiaoyu.auto.util.DateUtil;
@@ -86,9 +85,14 @@ public class RequestLogAspect {
     public void doAfterThrowing(Operation operation, Throwable e){
         long happendTime = System.currentTimeMillis();
         requestExceptionEntity.setHappendTime(DateUtil.parse(happendTime));
-        requestExceptionEntity.setMessage(e.getMessage());
-        log.error("exception====>"+JSON.toJSONString(e,
-                SerializerFeature.DisableCircularReferenceDetect,SerializerFeature.WriteMapNullValue));
+        StackTraceElement[] se = e.getStackTrace();
+        StringBuffer sb = new StringBuffer();
+        for (int i=0;i<se.length;i++){
+            StackTraceElement element = se[i];
+            sb.append(element.toString() + "\n");
+        }
+        requestExceptionEntity.setMessage(sb.toString());
+        log.error("exception====>"+sb.toString());
         requestExceptionEntityMapper.insertSelective(requestExceptionEntity);
         throw new CommonException(requestExceptionEntity);
 

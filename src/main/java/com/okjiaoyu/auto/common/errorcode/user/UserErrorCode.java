@@ -13,6 +13,7 @@ public enum  UserErrorCode implements BaseErrorCode {
     ENABLED(1, "record has been enabled"),
     DELETES(9, "record has been deleted"),
     CAS_LOGIN_FAIL(1001,"单点登录失败"),
+    NOT_LOGIN(1002,"未登录"),
     ;
 
     private int code;

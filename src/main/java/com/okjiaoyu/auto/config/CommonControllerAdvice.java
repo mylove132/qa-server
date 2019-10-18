@@ -28,6 +28,6 @@ public class CommonControllerAdvice {
     @ResponseBody
     @ExceptionHandler(value = CommonException.class)
     public BaseResponse exceptionHandler(CommonException exception){
-        return new ErrorResponse(exception.getRequestExceptionEntity(),exception.getMessage());
+        return new ErrorResponse(exception.getRequestExceptionEntity());
     }
 }

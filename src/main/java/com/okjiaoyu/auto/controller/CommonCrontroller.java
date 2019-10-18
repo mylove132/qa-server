@@ -2,8 +2,7 @@ package com.okjiaoyu.auto.controller;
 
 import com.okjiaoyu.auto.common.BaseResponse;
 import com.okjiaoyu.auto.common.SuccessResponse;
-import com.okjiaoyu.auto.dao.EnvEntityMapper;
-import com.okjiaoyu.auto.vo.EnvEntity;
+import com.okjiaoyu.auto.service.ICatalogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,14 +22,23 @@ import java.util.List;
 @RequestMapping("/api/common")
 public class CommonCrontroller {
 
-    @Autowired
-    private EnvEntityMapper envEntityMapper;
+//    @Autowired
+//    private EnvEntityMapper envEntityMapper;
+//
+//    @RequestMapping(value = "/env",method = RequestMethod.GET)
+//    public BaseResponse envList(){
+//        log.info("获取环境列表");
+//        List<EnvEntity> envEntities = envEntityMapper.queryEnvList();
+//        log.info("环境列表：{}",envEntities);
+//        return new SuccessResponse(envEntities);
+//    }
 
-    @RequestMapping(value = "/env",method = RequestMethod.GET)
-    public BaseResponse envList(){
-        log.info("获取环境列表");
-        List<EnvEntity> envEntities = envEntityMapper.queryEnvList();
-        log.info("环境列表：{}",envEntities);
-        return new SuccessResponse(envEntities);
+
+    @Autowired
+    private ICatalogService catalogService;
+
+    @RequestMapping(value = "catalogList",method = RequestMethod.GET)
+    public BaseResponse getCatalogCrontroller(){
+        return new SuccessResponse(catalogService.catalogListService());
     }
 }

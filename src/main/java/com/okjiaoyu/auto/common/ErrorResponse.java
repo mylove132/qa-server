@@ -27,6 +27,11 @@ public class ErrorResponse<T> extends BaseResponse {
         this.setMessage(message);
     }
 
+    public ErrorResponse(T data) {
+        this.setCode(CommonErrorCode.OP_FAILED.key());
+        this.setData(data);
+    }
+
     public ErrorResponse(Integer code, String message, Object[] params) {
         this.setCode(code);
         String msg = getMessage(message, params);

@@ -3,6 +3,8 @@ package com.okjiaoyu.auto.aop;
 import com.okjiaoyu.auto.vo.RequestExceptionEntity;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @Author: liuzhanhui
  * @Decription:
@@ -13,6 +15,14 @@ import lombok.Data;
 public class CommonException extends RuntimeException {
 
     private RequestExceptionEntity requestExceptionEntity;
+
+    public CommonException(String message){
+        super(message);
+        RequestExceptionEntity re = new RequestExceptionEntity();
+        re.setMessage(message);
+        re.setHappendTime(new Date());
+        this.requestExceptionEntity = re;
+    }
 
     public CommonException(RequestExceptionEntity requestExceptionEntity){
         super(requestExceptionEntity.getMessage());

@@ -10,7 +10,7 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/auto_web_db" userId="root" password="123456">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/okjiaoyu" userId="root" password="123456">
         </jdbcConnection>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
 
@@ -66,7 +66,7 @@
 
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
 
-        <table tableName="entity_cookie" domainObjectName="CookieEntity" enableCountByExample="false"
+        <table tableName="entity_catalog" domainObjectName="CatalogEntity" enableCountByExample="false"
 
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
 
