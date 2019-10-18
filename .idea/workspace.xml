@@ -2,66 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef250bb-c895-49fb-b882-919bd39aa66c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/catalog/CatalogErrorCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/AddCaseRequestVo.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseTypeEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/EnvEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/HeaderEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ModuleEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ParamEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ProjectEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ProtocolEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICaseService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICookieService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/IModuleService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ISearchService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CookieServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/ModuleServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/SearchServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CaseEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CaseTypeEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CookieEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/EnvEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/HeaderEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ModuleEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ParamEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ProjectEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ProtocolEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CaseEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CaseTypeEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/EnvEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/HeaderEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ModuleEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ParamEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProjectEntityMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProtocolEntityMapper.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/qa_platform.iml" afterPath="$PROJECT_DIR$/qa_web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/CommonException.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/CommonException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ErrorResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ErrorResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/CommonControllerAdvice.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/CommonControllerAdvice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CookieCrontroller.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CookieCrontroller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/RedisController.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/RedisController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/SearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/SearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseProjectServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/sql/auto_web_db.sql" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CatalogServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CatalogServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="810">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CatalogEntityMapper.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CatalogEntityMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
+            <state relative-caret-position="1695">
               <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
               <folding>
                 <marker date="1571120187000" expanded="true" signature="1002:1111" ph="select from entity_catalog" />
@@ -314,6 +255,12 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
           <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
@@ -324,11 +271,11 @@
     <option name="jreName" value="#JAVA_INTERNAL" />
     <option name="vmOptions" value="-DarchetypeCatalog=local" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="1130" />
-    <option name="y" value="-1056" />
-    <option name="width" value="1655" />
-    <option name="height" value="928" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1071" />
+    <option name="y" value="-1032" />
+    <option name="width" value="1440" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -572,30 +519,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis-generator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
@@ -900,16 +823,15 @@
       <workItem from="1570500862743" duration="5029000" />
       <workItem from="1570522783962" duration="12103000" />
       <workItem from="1571018248097" duration="802000" />
-      <workItem from="1571104859917" duration="2086000" />
+      <workItem from="1571104859917" duration="2618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131274000" />
+    <option name="totallyTimeSpent" value="131806000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1130" y="-1056" width="1655" height="928" extended-state="1" />
-    <editor active="true" />
+    <frame x="1071" y="-1032" width="1440" height="800" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -918,14 +840,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.093614385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21968788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10801145" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25957447" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26303855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26241136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31618103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36480686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1266,22 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
-          <folding>
-            <marker date="1571120187000" expanded="true" signature="1002:1111" ph="select from entity_catalog" />
-            <marker date="1571120187000" expanded="true" signature="1197:1261" ph="delete from " />
-            <marker date="1571120187000" expanded="true" signature="1352:1618" ph="insert into entity_catalog... " />
-            <marker date="1571120187000" expanded="true" signature="2814:3333" ph="update entit... " />
-            <marker date="1571120187000" expanded="true" signature="3436:3704" ph="update entit... " />
-            <marker date="1571120187000" expanded="true" signature="3781:3885" ph="select from entity_catalog" />
-            <marker date="1571120187000" expanded="true" signature="3994:4087" ph="select from entity_catalog" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CatalogEntityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1311,17 +1217,33 @@
         <state relative-caret-position="360">
           <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="810">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+          <folding>
+            <marker date="1571120187000" expanded="true" signature="1002:1111" ph="select from entity_catalog" />
+            <marker date="1571120187000" expanded="true" signature="1197:1261" ph="delete from " />
+            <marker date="1571120187000" expanded="true" signature="1352:1618" ph="insert into entity_catalog... " />
+            <marker date="1571120187000" expanded="true" signature="2814:3333" ph="update entit... " />
+            <marker date="1571120187000" expanded="true" signature="3436:3704" ph="update entit... " />
+            <marker date="1571120187000" expanded="true" signature="3781:3885" ph="select from entity_catalog" />
+            <marker date="1571120187000" expanded="true" signature="3994:4087" ph="select from entity_catalog" />
           </folding>
         </state>
       </provider>
