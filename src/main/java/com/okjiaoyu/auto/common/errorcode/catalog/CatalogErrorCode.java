@@ -1,5 +1,5 @@
 package com.okjiaoyu.auto.common.errorcode.catalog;
-import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
+import com.okjiaoyu.auto.common.BaseResponse;
 
 /**
  * @Author: liuzhanhui
@@ -7,31 +7,27 @@ import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
  * @Date: Created in 2019-09-19:11:50
  * Modify date: 2019-09-19:11:50
  */
-public enum CatalogErrorCode implements BaseErrorCode {
+public enum CatalogErrorCode implements BaseResponse {
 
     EXIST_SOON_ID(2001, "存在子级目录，不能直接删除父级目录"),
     ;
 
-    private int code;
+    private int resultCode;
 
-    private String desc;
+    private String resultMsg;
 
-    CatalogErrorCode(int code, String desc) {
-        this.code = code;
-        this.desc = desc;
-    }
-
-    public CatalogErrorCode get() {
-        return this;
+    CatalogErrorCode(int resultCode, String resultMsg){
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
     }
 
     @Override
-    public Integer key() {
-        return this.code;
+    public int getResultCode() {
+        return resultCode;
     }
 
     @Override
-    public String value() {
-        return this.desc;
+    public String getResultMsg() {
+        return resultMsg;
     }
 }

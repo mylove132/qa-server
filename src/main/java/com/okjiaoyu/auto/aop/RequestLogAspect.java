@@ -5,6 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.okjiaoyu.auto.annotion.Operation;
 import com.okjiaoyu.auto.dao.RequestExceptionEntityMapper;
 import com.okjiaoyu.auto.dao.RequestLogEntityMapper;
+import com.okjiaoyu.auto.exception.BizException;
 import com.okjiaoyu.auto.util.DateUtil;
 import com.okjiaoyu.auto.util.RequestUtil;
 import com.okjiaoyu.auto.vo.RequestExceptionEntity;
@@ -87,6 +88,8 @@ public class RequestLogAspect {
         requestExceptionEntity.setHappendTime(DateUtil.parse(happendTime));
         StackTraceElement[] se = e.getStackTrace();
         StringBuffer sb = new StringBuffer();
+        sb.append(operation.value()+"发生错误"+"\n");
+        sb.append("错误信息："+e.getMessage());
         for (int i=0;i<se.length;i++){
             StackTraceElement element = se[i];
             sb.append(element.toString() + "\n");
@@ -94,7 +97,7 @@ public class RequestLogAspect {
         requestExceptionEntity.setMessage(sb.toString());
         log.error("exception====>"+sb.toString());
         requestExceptionEntityMapper.insertSelective(requestExceptionEntity);
-        throw new CommonException(requestExceptionEntity);
+        throw new BizException(e.getMessage());
 
     }
 }

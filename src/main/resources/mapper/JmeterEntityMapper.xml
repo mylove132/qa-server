@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okjiaoyu.auto.dao.JmeterEntityMapper">
+  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.JmeterEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pre_time" jdbcType="INTEGER" property="preTime" />
+    <result column="pre_number" jdbcType="INTEGER" property="preNumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, pre_time, pre_number
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from entity_jmeter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from entity_jmeter
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+    insert into entity_jmeter (id, pre_time, pre_number
+      )
+    values (#{id,jdbcType=INTEGER}, #{preTime,jdbcType=INTEGER}, #{preNumber,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+    insert into entity_jmeter
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="preTime != null">
+        pre_time,
+      </if>
+      <if test="preNumber != null">
+        pre_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="preTime != null">
+        #{preTime,jdbcType=INTEGER},
+      </if>
+      <if test="preNumber != null">
+        #{preNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+    update entity_jmeter
+    <set>
+      <if test="preTime != null">
+        pre_time = #{preTime,jdbcType=INTEGER},
+      </if>
+      <if test="preNumber != null">
+        pre_number = #{preNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+    update entity_jmeter
+    set pre_time = #{preTime,jdbcType=INTEGER},
+      pre_number = #{preNumber,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,8 +1,7 @@
 package com.okjiaoyu.auto.controller;
 
 import com.okjiaoyu.auto.annotion.Operation;
-import com.okjiaoyu.auto.common.BaseResponse;
-import com.okjiaoyu.auto.common.SuccessResponse;
+import com.okjiaoyu.auto.common.ResultBody;
 import com.okjiaoyu.auto.service.ICatalogService;
 import com.okjiaoyu.auto.vo.CatalogEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,25 +24,25 @@ public class CatalogCrontroller {
 
     @Operation("查询目录层级列表")
     @RequestMapping(method = RequestMethod.GET)
-    public BaseResponse catalogListCrontroller(){
-        return new SuccessResponse(catalogService.catalogListService());
+    public ResultBody catalogListCrontroller(){
+        return ResultBody.success(catalogService.catalogListService());
     }
 
     @Operation("添加目录")
     @RequestMapping(method = RequestMethod.POST)
-    public BaseResponse addCatalogCrontroller(CatalogEntity catalogEntity){
+    public ResultBody addCatalogCrontroller(CatalogEntity catalogEntity){
         return catalogService.addCatalogService(catalogEntity);
     }
 
     @Operation("修改目录")
     @RequestMapping(method = RequestMethod.PUT)
-    public BaseResponse updateCatalogCrontroller(CatalogEntity catalogEntity){
+    public ResultBody updateCatalogCrontroller(CatalogEntity catalogEntity){
         return catalogService.updateCatalogService(catalogEntity);
     }
 
     @Operation("删除目录")
     @RequestMapping(method = RequestMethod.DELETE)
-    public BaseResponse delIdCatalogCrontroller(int catalogId){
+    public ResultBody delIdCatalogCrontroller(int catalogId){
         return catalogService.delCatalogService(catalogId);
     }
 }

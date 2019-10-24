@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okjiaoyu.auto.dao.CasLoginEntityMapper">
+  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CasLoginEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="env_id" jdbcType="INTEGER" property="envId" />
+    <result column="domain" jdbcType="VARCHAR" property="domain" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <collection property="cookies" column="id" select="queryCookiesMap"></collection>
+    <collection property="env" column="env_id" select="queryEnvMap"></collection>
+  </resultMap>
+  <resultMap id="CookieResultMap" type="com.okjiaoyu.auto.vo.CookieEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="c_key" jdbcType="VARCHAR" property="cKey" />
+    <result column="c_value" jdbcType="LONGVARCHAR" property="cValue" />
+    <result column="domain" jdbcType="VARCHAR" property="domain" />
+    <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+    <result column="case_id" jdbcType="INTEGER" property="caseId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="cas_login_id" jdbcType="INTEGER" property="casLoginId" />
+  </resultMap>
+  <resultMap id="EnvResultMap" type="com.okjiaoyu.auto.vo.EnvEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+  <sql id="Env_Column_List">
+    id, name
+  </sql>
+  <sql id="Base_Column_List">
+    id, username, password, env_id, domain, name,create_time,update_time
+  </sql>
+  <sql id="Cookie_Column_List">
+    id, c_key,c_value, domain, expire_time, case_id, create_time, update_time, cas_login_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from entity_cas_login
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from entity_cas_login
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+    insert into entity_cas_login (id, username, password,
+      env_id, domain, name,create_time,update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{envId,jdbcType=INTEGER}, #{domain,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},#{createTime},#{updateTime}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+    insert into entity_cas_login
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="envId != null">
+        env_id,
+      </if>
+      <if test="domain != null">
+        domain,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="envId != null">
+        #{envId,jdbcType=INTEGER},
+      </if>
+      <if test="domain != null">
+        #{domain,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+    update entity_cas_login
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="envId != null">
+        env_id = #{envId,jdbcType=INTEGER},
+      </if>
+      <if test="domain != null">
+        domain = #{domain,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+    update entity_cas_login
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      env_id = #{envId,jdbcType=INTEGER},
+      domain = #{domain,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      update_time = #{updateTime},
+      create_time = #{createTime}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="queryUserCookiesList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from entity_cas_login
+  </select>
+  <select id="queryCookiesMap" parameterType="java.lang.Integer" resultMap="CookieResultMap">
+    select
+    <include refid="Cookie_Column_List" />
+    from entity_cookie
+    WHERE cas_login_id = #{id}
+  </select>
+  <select id="queryEnvMap" parameterType="java.lang.Integer" resultMap="EnvResultMap">
+    select
+    <include refid="Env_Column_List" />
+    from entity_env
+    WHERE id = #{id}
+  </select>
+</mapper>

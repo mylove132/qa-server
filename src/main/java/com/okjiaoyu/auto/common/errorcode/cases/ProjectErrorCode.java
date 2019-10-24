@@ -1,6 +1,6 @@
 package com.okjiaoyu.auto.common.errorcode.cases;
 
-import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
+import com.okjiaoyu.auto.common.BaseResponse;
 
 /**
  * @Author: liuzhanhui
@@ -8,32 +8,28 @@ import com.okjiaoyu.auto.common.errorcode.BaseErrorCode;
  * @Date: Created in 2019-09-20:10:47
  * Modify date: 2019-09-20:10:47
  */
-public enum ProjectErrorCode implements BaseErrorCode{
+public enum ProjectErrorCode implements BaseResponse{
     PROJECT_NOT_KNOWN_FAIL(2001, "添加未知错误"),
     PROJECT_NAME_EXIST(2002, "项目名称已存在"),
     PROJECT_ID_NOT_EXIST(2003, "项目id不存在"),
             ;
 
-    private int code;
+    private int resultCode;
 
-    private String desc;
+    private String resultMsg;
 
-    ProjectErrorCode(int code, String desc) {
-        this.code = code;
-        this.desc = desc;
-    }
-
-    public ProjectErrorCode get() {
-        return this;
+    ProjectErrorCode(int resultCode, String resultMsg){
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
     }
 
     @Override
-    public Integer key() {
-        return this.code;
+    public int getResultCode() {
+        return resultCode;
     }
 
     @Override
-    public String value() {
-        return this.desc;
+    public String getResultMsg() {
+        return resultMsg;
     }
 }

@@ -1,8 +1,6 @@
 package com.okjiaoyu.auto.service.impl;
 
-import com.okjiaoyu.auto.common.BaseResponse;
-import com.okjiaoyu.auto.common.ErrorResponse;
-import com.okjiaoyu.auto.common.SuccessResponse;
+import com.okjiaoyu.auto.common.ResultBody;
 import com.okjiaoyu.auto.common.errorcode.catalog.CatalogErrorCode;
 import com.okjiaoyu.auto.dao.CatalogEntityMapper;
 import com.okjiaoyu.auto.service.ICatalogService;
@@ -32,16 +30,16 @@ public class CatalogServiceImpl implements ICatalogService {
     }
 
     @Override
-    public BaseResponse addCatalogService(CatalogEntity catalogEntity) {
+    public ResultBody addCatalogService(CatalogEntity catalogEntity) {
         int result = catalogEntityMapper.insertSelective(catalogEntity);
         if (result<=0){
             throw new RuntimeException("添加目录失败");
         }
-        return new SuccessResponse(true);
+        return ResultBody.success(true);
     }
 
     @Override
-    public BaseResponse updateCatalogService(CatalogEntity catalogEntity) {
+    public ResultBody updateCatalogService(CatalogEntity catalogEntity) {
         if (catalogEntity.getId() == null || catalogEntity.getId() <= 0){
             throw new RuntimeException("修改项目id不能为空或者小于0");
         }
@@ -52,34 +50,34 @@ public class CatalogServiceImpl implements ICatalogService {
         if (result<=0){
             throw new RuntimeException(String.format("修改主键id：{}失败", catalogEntity.getId()));
         }
-        return new SuccessResponse(true);
+        return ResultBody.success(true);
     }
 
     @Override
-    public BaseResponse delCatalogService(int catalogId) {
+    public ResultBody delCatalogService(int catalogId) {
         CatalogEntity catalogEntity = catalogEntityMapper.selectByPrimaryKey(catalogId);
         if (catalogEntity.getChildren() != null && catalogEntity.getChildren().size() > 0){
-            return new ErrorResponse(CatalogErrorCode.EXIST_SOON_ID);
+            return ResultBody.error(CatalogErrorCode.EXIST_SOON_ID);
         }
         int result = catalogEntityMapper.deleteByPrimaryKey(catalogId);
         if (result<=0){
             throw new RuntimeException(String.format("删除主键id：{}失败", catalogId));
         }
-        return new SuccessResponse(true);
+        return ResultBody.success(true);
     }
 
     @Override
-    public BaseResponse delCatalogService(int[] ids) {
+    public ResultBody delCatalogService(int[] ids) {
         for (int i=0; i < ids.length-1;i++){
             CatalogEntity catalogEntity = catalogEntityMapper.selectByPrimaryKey(ids[i]);
             if (catalogEntity.getChildren() != null || catalogEntity.getChildren().size() > 0){
-                return new ErrorResponse(CatalogErrorCode.EXIST_SOON_ID);
+                return ResultBody.error(CatalogErrorCode.EXIST_SOON_ID);
             }
             int result = catalogEntityMapper.deleteByPrimaryKey(ids[i]);
             if (result<=0){
                 throw new RuntimeException(String.format("删除主键id：{}失败", ids[i]));
             }
         }
-        return new SuccessResponse(true);
+        return ResultBody.success(true);
     }
 }

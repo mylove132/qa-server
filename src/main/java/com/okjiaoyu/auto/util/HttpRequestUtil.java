@@ -1,7 +1,7 @@
 package com.okjiaoyu.auto.util;
 
 import com.google.common.base.Charsets;
-import com.okjiaoyu.auto.aop.CommonException;
+import com.okjiaoyu.auto.exception.BizException;
 import com.okjiaoyu.auto.vo.request.LoginRequestVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
@@ -84,17 +84,17 @@ public class HttpRequestUtil {
             HttpResponse response = client.execute(get);
             int code = response.getStatusLine().getStatusCode();
             if (code >= 400)
-                throw new CommonException((new StringBuilder()).append("Could not access protected resource. Server returned http code: ").append(code).toString());
+                throw new BizException((new StringBuilder()).append("Could not access protected resource. Server returned http code: ").append(code).toString());
             log.info("请求返回的结果：{}", EntityUtils.toString(response.getEntity()));
             return EntityUtils.toString(response.getEntity());
         }
         catch (ClientProtocolException e) {
             log.error("postRequest -- Client protocol exception!"+e.getMessage());
-            throw new CommonException("postRequest -- Client protocol exception!"+e.getMessage());
+            throw new BizException("postRequest -- Client protocol exception!"+e.getMessage());
         }
         catch (IOException e) {
             log.error("请求错误："+e.getMessage());
-            throw new CommonException("请求错误："+e.getMessage());
+            throw new BizException("请求错误："+e.getMessage());
         }
         finally {
             log.error("释放请求连接");
@@ -179,18 +179,18 @@ public class HttpRequestUtil {
             int code = response.getStatusLine().getStatusCode();
             if (code >= 400) {
                 log.error("post请求地址：{},返回code码：{}",path,code);
-                throw new CommonException(EntityUtils.toString(response.getEntity()));
+                throw new BizException(EntityUtils.toString(response.getEntity()));
             }
             log.info("请求返回结果：{}",EntityUtils.toString(response.getEntity()));
             return EntityUtils.toString(response.getEntity());
         }
         catch (ClientProtocolException e) {
             log.error("post请求地址：{},错误信息：{}",path,e.getMessage());
-            throw new CommonException(e.getMessage());
+            throw new BizException(e.getMessage());
         }
         catch (IOException e) {
             log.error("post请求地址：{},错误信息：{}",path,e.getMessage());
-            throw new CommonException(e.getMessage());
+            throw new BizException(e.getMessage());
         }
         finally {
             post.releaseConnection();
@@ -203,10 +203,15 @@ public class HttpRequestUtil {
      * @return
      * @throws IOException
      */
-    private static Map<String,String> getLoginRequestLTAndExecution(String url) throws IOException {
+    private static Map<String,String> getLoginRequestLTAndExecution(String url)  {
         log.info("请求单点登录地址:{}",url);
         Map<String,String> result = new HashMap<>();
-        Document doc = Jsoup.connect(url).get();
+        Document doc = null;
+        try {
+            doc = Jsoup.connect(url).get();
+        } catch (IOException e) {
+            throw new RuntimeException("连接登录页面失败");
+        }
         String lt = doc.select("input[name='lt']").first().val();
         String execution = doc.select("input[name='execution']").first().val();
         String platformType = doc.select("input[name='platformType']").first().val();
@@ -253,8 +258,8 @@ public class HttpRequestUtil {
             if (Location != null && !"".equals(Location))
                 return Location;
             return null;
-        }catch (CommonException e){
-            throw new CommonException("获取登录首页信息错误");
+        }catch (BizException e){
+            throw new BizException("获取登录首页信息错误");
         }
     }
 
@@ -277,4 +282,9 @@ public class HttpRequestUtil {
         return httpClient.getCookieStore().getCookies();
     }
 
+    public static void main(String[] args) throws Exception {
+        LoginRequestVo loginRequestVo = new LoginRequestVo();
+        loginRequestVo.setUrl("");
+        casLogin(loginRequestVo);
+    }
 }

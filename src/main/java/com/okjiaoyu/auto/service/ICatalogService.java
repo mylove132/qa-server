@@ -1,6 +1,8 @@
 package com.okjiaoyu.auto.service;
 
 import com.okjiaoyu.auto.common.BaseResponse;
+import com.okjiaoyu.auto.common.ResultBody;
+import com.okjiaoyu.auto.exception.BizException;
 import com.okjiaoyu.auto.vo.CatalogEntity;
 
 import java.util.List;
@@ -13,13 +15,13 @@ import java.util.List;
  */
 public interface ICatalogService {
 
-    List<CatalogEntity> catalogListService();
+    List<CatalogEntity> catalogListService() throws BizException;
 
-    BaseResponse addCatalogService(CatalogEntity catalogEntity);
+    ResultBody addCatalogService(CatalogEntity catalogEntity) throws BizException;
 
-    BaseResponse updateCatalogService(CatalogEntity catalogEntity);
+    ResultBody updateCatalogService(CatalogEntity catalogEntity) throws BizException;
 
-    BaseResponse delCatalogService(int catalogId);
+    ResultBody delCatalogService(int catalogId) throws BizException;
 
-    BaseResponse delCatalogService(int[] ids);
+    ResultBody delCatalogService(int[] ids) throws BizException;
 }

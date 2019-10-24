@@ -15,6 +15,8 @@ public class CatalogEntity {
 
     private Integer level;
 
+    private Integer envId;
+
     private List<CatalogEntity> children;
 
     public Integer getId() {
@@ -63,6 +65,14 @@ public class CatalogEntity {
 
     public void setLevel(Integer level) {
         this.level = level;
+    }
+
+    public Integer getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Integer envId) {
+        this.envId = envId;
     }
 
     public List<CatalogEntity> getChildren() {
