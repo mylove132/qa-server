@@ -2,39 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef250bb-c895-49fb-b882-919bd39aa66c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/CommonException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ErrorResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/SuccessResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/BaseErrorCode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/common/CommonErrorCode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CookieCrontroller.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/HttpRequestController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/RedisController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/SearchController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CatalogEntityMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/CommonControllerAdvice.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/GlobalExceptionHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/CommonException.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICaseService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/IUserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/UserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/MD5Util.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseEntityMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/HeaderEntityMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ParamEntityMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/TokenEntityMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/UserEntityMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CaseEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/HeaderEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ParamEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/TokenEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/UserEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CaseEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/HeaderEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ParamEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/TokenEntityMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserEntityMapper.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/BaseResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/BaseResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/catalog/CatalogErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/catalog/CatalogErrorCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data.properties" afterPath="$PROJECT_DIR$/src/main/resources/data.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,108 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CasCrontoller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java">
+      <file leaf-file-name="SecurityInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/SecurityInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="62" lean-forward="true" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultBody.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="114" column="27" lean-forward="true" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1033#1034#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalExceptionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/GlobalExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="32" column="71" lean-forward="false" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BizException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#1487#1488#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestLogAspect.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="90" column="46" lean-forward="false" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpRequestUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1212">
-              <caret line="261" column="34" lean-forward="false" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonCrontroller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -169,12 +77,93 @@
       <file leaf-file-name="CatalogCrontroller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICasLoginService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CasLoginServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1035">
+              <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICaseService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
               <folding>
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#933#934#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddCaseRequestVo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/AddCaseRequestVo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis-generator.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CasCrontoller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,17 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>spring.druid.testWhileIdle</find>
-      <find>spring.druid.minIdle</find>
-      <find>spring.druid.testOnBorrow</find>
-      <find>登录</find>
-      <find>登录请求返回信息</find>
-      <find>第一个cookie信息</find>
-      <find>系统错误信息</find>
-      <find>登录获取的cookie</find>
-      <find>Cookie</find>
-      <find>mybatis-spring-boot-starter</find>
-      <find>java.util.HashMap</find>
       <find>grt</find>
       <find>Base_Column_List</find>
       <find>queryProject</find>
@@ -221,6 +199,17 @@
       <find>ResultMapWithBLOBs</find>
       <find>Blob_Column_List</find>
       <find>w</find>
+      <find>selectByPrimaryKey</find>
+      <find>queryCasesByCatalogId</find>
+      <find>queryCookiesByCasLoginId</find>
+      <find>updateCookieBatch</find>
+      <find>新的cookie</find>
+      <find>spring.druid.initialSize</find>
+      <find>spring.druid.minIdle</find>
+      <find>spring.druid.maxActive</find>
+      <find>redis</find>
+      <find>webplatform</find>
+      <find>jmeter-web</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -234,35 +223,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/SearchController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/RequestExceptionEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/SecurityInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/WebConfigurer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/okjiaoyu/auto/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/XmlVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/XmlUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/RequestWayEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/RequestWayEntityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CaseEntityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CatalogEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/EnvEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/EnvEntityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/common/CommonErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasLoginCrontoller.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/ICookieService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICookieService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CookieServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CookieCrontroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CasLoginEntityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CasLoginEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CasLoginEntityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/BaseErrorCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/BaseCode.java" />
@@ -273,18 +237,43 @@
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/CommonException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/CommonControllerAdvice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/UserEntityMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserEntityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/TokenEntityMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/TokenEntityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CaseEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/data.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/DataSourceConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/profile/dev/zk.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/ZKPropertiesLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/StartApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml" />
       </list>
     </option>
   </component>
@@ -316,6 +305,11 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
         <path>
@@ -323,12 +317,6 @@
           <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
           <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="qa_platform" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -339,10 +327,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=local" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1495" />
-    <option name="y" value="-1025" />
-    <option name="width" value="1739" />
-    <option name="height" value="977" />
+    <option name="x" value="1169" />
+    <option name="y" value="-1057" />
+    <option name="width" value="1440" />
+    <option name="height" value="960" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -473,6 +461,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -549,6 +539,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="auto" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auto" type="462c0819:PsiDirectoryNode" />
               <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -569,6 +568,34 @@
               <item name="auto" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auto" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auto" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auto" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+              <item name="request" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
@@ -597,6 +624,23 @@
               <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="qa_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qa_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qa_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -618,9 +662,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -652,11 +694,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.okjiaoyu.auto.common.errorcode.catalog" />
-      <recent name="com.okjiaoyu.auto.common" />
       <recent name="com.okjiaoyu.auto.util" />
-      <recent name="com.okjiaoyu.auto.config" />
-      <recent name="com.okjiaoyu.auto.annotion" />
+      <recent name="com.okjiaoyu.auto.service.impl" />
+      <recent name="com.okjiaoyu.auto.service" />
+      <recent name="com.okjiaoyu.auto.controller" />
+      <recent name="com.okjiaoyu.auto.common.errorcode.catalog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/profile/dev" />
@@ -900,32 +942,32 @@
       <workItem from="1570522783962" duration="12103000" />
       <workItem from="1571018248097" duration="802000" />
       <workItem from="1571104859917" duration="2867000" />
-      <workItem from="1571623692175" duration="37310000" />
+      <workItem from="1571623692175" duration="52339000" />
+      <workItem from="1572320049331" duration="13369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169365000" />
+    <option name="totallyTimeSpent" value="197763000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1495" y="-1025" width="1739" height="977" extended-state="0" />
-    <editor active="true" />
+    <frame x="1169" y="-1057" width="1440" height="960" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48639455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.485755" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.088980556" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4059633" sideWeight="0.50206244" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10801145" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45202312" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3537415" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26241136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26190478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30465528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23819743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -933,8 +975,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4059633" sideWeight="0.49793753" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40702948" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -981,78 +1023,178 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/okjiaoyu/auto/MainTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="330">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/okjiaoyu.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119828">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1571391260000" expanded="true" signature="0:324" ph="/* Navicat P... " />
-            <marker date="1571391260000" expanded="true" signature="473:507" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="509:1092" ph="CREATE TABLE... entity_case" />
-            <marker date="1571391260000" expanded="true" signature="1200:1237" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="1239:1725" ph="CREATE TABLE... entity_catalog" />
-            <marker date="1571391260000" expanded="true" signature="1831:2199" ph="INSERT INTO `entity_catalog`... " />
-            <marker date="1571391260000" expanded="true" signature="2316:2354" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="2356:2518" ph="CREATE TABLE... entity_protocol" />
-            <marker date="1571391260000" expanded="true" signature="2625:2691" ph="INSERT INTO `entity_protocol`... " />
-            <marker date="1571391260000" expanded="true" signature="2817:2864" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="2866:3126" ph="CREATE TABLE... entity_request_exception" />
-            <marker date="1571391260000" expanded="true" signature="3238:3279" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="3281:4140" ph="CREATE TABLE... entity_request_log" />
-            <marker date="1571391260000" expanded="true" signature="4250:70387" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="70389:136120" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="136122:201905" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="201907:267994" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="267996:333703" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="333705:399623" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="399625:465863" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="465865:532013" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="532015:598163" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="598165:631871" ph="INSERT INTO `entity_request_log`... " />
-            <marker date="1571391260000" expanded="true" signature="631984:632018" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="632020:632193" ph="CREATE TABLE... entity_role" />
-            <marker date="1571391260000" expanded="true" signature="632299:632334" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="632336:632794" ph="CREATE TABLE... entity_token" />
-            <marker date="1571391260000" expanded="true" signature="632899:632933" ph="DROP TABLE I... " />
-            <marker date="1571391260000" expanded="true" signature="632935:633434" ph="CREATE TABLE... entity_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/RequestWayEntityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="385">
+          <caret line="85" column="72" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RequestWayEntityMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        <state relative-caret-position="280">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="21" />
           <folding>
-            <marker date="1571715315000" expanded="true" signature="574:688" ph="select from entity_request_way" />
-            <marker date="1571715315000" expanded="true" signature="774:842" ph="delete from " />
-            <marker date="1571715315000" expanded="true" signature="936:1037" ph="insert into entity_request_way... " />
-            <marker date="1571715315000" expanded="true" signature="1678:1843" ph="update entit... " />
-            <marker date="1571715315000" expanded="true" signature="1949:2050" ph="update entit... " />
-            <marker date="1571715315000" expanded="true" signature="2125:2200" ph="select from entity_request_way" />
+            <element signature="e#1565#1566#0" expanded="false" />
+            <element signature="e#1591#1592#0" expanded="false" />
+            <element signature="e#1632#1633#0" expanded="false" />
+            <element signature="e#1662#1663#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CatalogEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="142" column="11" lean-forward="true" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+          <folding>
+            <marker date="1571903768000" expanded="true" signature="1697:1806" ph="select from entity_catalog" />
+            <marker date="1571903768000" expanded="true" signature="1892:1956" ph="delete from " />
+            <marker date="1571903768000" expanded="true" signature="2047:2346" ph="insert into entity_catalog... " />
+            <marker date="1571903768000" expanded="true" signature="3681:4288" ph="update entit... " />
+            <marker date="1571903768000" expanded="true" signature="4391:4701" ph="update entit... " />
+            <marker date="1571903768000" expanded="true" signature="4811:4915" ph="select from entity_catalog" />
+            <marker date="1571903768000" expanded="true" signature="5025:5118" ph="select from entity_catalog" />
+            <marker date="1571903768000" expanded="true" signature="5241:5304" ph="select from entity_env" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="67" column="33" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding>
+            <element signature="e#1254#1255#0" expanded="false" />
+            <element signature="e#1302#1303#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/TokenEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/UserEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserEntityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="133" column="24" lean-forward="false" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+          <folding>
+            <marker date="1571912846000" expanded="true" signature="982:1088" ph="select from entity_user" />
+            <marker date="1571912846000" expanded="true" signature="1174:1235" ph="delete from " />
+            <marker date="1571912846000" expanded="true" signature="1323:1648" ph="insert into entity_user... " />
+            <marker date="1571912846000" expanded="true" signature="3027:3672" ph="update entit... " />
+            <marker date="1571912846000" expanded="true" signature="3772:4108" ph="update entit... " />
+            <marker date="1571912846000" expanded="true" signature="4181:4249" ph="select from entity_user" />
+            <marker date="1571912846000" expanded="true" signature="4356:4449" ph="select from entity_user" />
+            <marker date="1571912846000" expanded="true" signature="4558:4652" ph="select from entity_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TokenEntityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="88" column="10" lean-forward="true" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <marker date="1571912955000" expanded="true" signature="740:847" ph="select from entity_token" />
+            <marker date="1571912955000" expanded="true" signature="933:995" ph="delete from " />
+            <marker date="1571912955000" expanded="true" signature="1084:1279" ph="insert into entity_token... " />
+            <marker date="1571912955000" expanded="true" signature="2216:2577" ph="update entit... " />
+            <marker date="1571912955000" expanded="true" signature="2678:2875" ph="update entit... " />
+            <marker date="1571912955000" expanded="true" signature="2981:3077" ph="select from entity_token" />
+            <marker date="1571912955000" expanded="true" signature="3185:3284" ph="select from entity_token" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/TokenEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CaseEntityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="176" column="35" lean-forward="false" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,306 +1206,241 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CatalogEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding>
-            <element signature="e#1372#1373#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1504#1505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CatalogEntityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CaseEntityMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/EnvEntityMapper.java">
+    <entry file="jar://$USER_HOME$/Documents/maven/.m2/repertory/org/springframework/spring-core/5.1.9.RELEASE/spring-core-5.1.9.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Documents/maven/.m2/repertory/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar!/org/apache/http/cookie/Cookie.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CookieServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="69" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICookieService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CookieCrontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CatalogEntityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1571726230000" expanded="true" signature="1077:1187" ph="select from entity_catalog" />
-            <marker date="1571726230000" expanded="true" signature="1273:1337" ph="delete from " />
-            <marker date="1571726230000" expanded="true" signature="1428:1731" ph="insert into entity_catalog... " />
-            <marker date="1571726230000" expanded="true" signature="3066:3673" ph="update entit... " />
-            <marker date="1571726230000" expanded="true" signature="3776:4086" ph="update entit... " />
-            <marker date="1571726230000" expanded="true" signature="4196:4300" ph="select from entity_catalog" />
-            <marker date="1571726230000" expanded="true" signature="4410:4503" ph="select from entity_catalog" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/HttpRequestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/RedisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/SearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EnvEntityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <marker date="1571727181000" expanded="true" signature="563:669" ph="select from entity_env" />
-            <marker date="1571727181000" expanded="true" signature="755:815" ph="delete from " />
-            <marker date="1571727181000" expanded="true" signature="902:997" ph="insert into entity_env... " />
-            <marker date="1571727181000" expanded="true" signature="1620:1780" ph="update entit... " />
-            <marker date="1571727181000" expanded="true" signature="1879:1974" ph="update entit... " />
-            <marker date="1571727181000" expanded="true" signature="2046:2113" ph="select from entity_env" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CaseEntityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="180" column="23" lean-forward="true" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
-          <folding>
-            <marker date="1571719091000" expanded="true" signature="1410:1517" ph="select from entity_case" />
-            <marker date="1571719091000" expanded="true" signature="1603:1664" ph="delete from " />
-            <marker date="1571719091000" expanded="true" signature="1752:2316" ph="insert into entity_case... " />
-            <marker date="1571719091000" expanded="true" signature="4454:5587" ph="update entit... " />
-            <marker date="1571719091000" expanded="true" signature="5687:6265" ph="update entit... " />
-            <marker date="1571719091000" expanded="true" signature="6380:6501" ph="select from entity_case" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CasLoginEntityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="59" lean-forward="true" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CookieEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="163">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CookieEntityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="331">
+          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CookieEntityMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="50" />
+        <state relative-caret-position="395">
+          <caret line="177" column="57" lean-forward="true" selection-start-line="177" selection-start-column="57" selection-end-line="177" selection-end-column="57" />
           <folding>
-            <marker date="1571814177000" expanded="true" signature="1405:1560" ph="select , fro... " />
-            <marker date="1571814177000" expanded="true" signature="1646:1709" ph="delete from " />
-            <marker date="1571814177000" expanded="true" signature="1799:2237" ph="insert into entity_cookie... " />
-            <marker date="1571814177000" expanded="true" signature="3945:4804" ph="update entit... " />
-            <marker date="1571814177000" expanded="true" signature="4915:5364" ph="update entit... " />
-            <marker date="1571814177000" expanded="true" signature="5466:5867" ph="update entit... " />
+            <marker date="1571990923000" expanded="true" signature="1405:1560" ph="select , fro... " />
+            <marker date="1571990923000" expanded="true" signature="1646:1709" ph="delete from " />
+            <marker date="1571990923000" expanded="true" signature="1799:2237" ph="insert into entity_cookie... " />
+            <marker date="1571990923000" expanded="true" signature="3945:4804" ph="update entit... " />
+            <marker date="1571990923000" expanded="true" signature="4915:5364" ph="update entit... " />
+            <marker date="1571990923000" expanded="true" signature="5466:5867" ph="update entit... " />
+            <marker date="1571990923000" expanded="true" signature="5990:6163" ph="select , fro... " />
+            <marker date="1571990923000" expanded="true" signature="6367:6821" ph="update entit... " />
+            <marker date="1571990923000" expanded="true" signature="6905:6930" ph="delete from " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CasLoginEntityMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="20" column="78" lean-forward="true" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-          <folding>
-            <marker date="1571814326000" expanded="true" signature="2364:2475" ph="select from entity_cas_login" />
-            <marker date="1571814326000" expanded="true" signature="2561:2627" ph="delete from " />
-            <marker date="1571814326000" expanded="true" signature="2719:3049" ph="insert into entity_cas_login... " />
-            <marker date="1571814326000" expanded="true" signature="4594:5302" ph="update entit... " />
-            <marker date="1571814326000" expanded="true" signature="5406:5756" ph="update entit... " />
-            <marker date="1571814326000" expanded="true" signature="5836:5909" ph="select from entity_cas_login" />
-            <marker date="1571814326000" expanded="true" signature="6020:6123" ph="select from entity_cookie" />
-            <marker date="1571814326000" expanded="true" signature="6227:6314" ph="select from entity_env" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/LoginRequestVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="268">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/CasLoginEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/CorsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-395">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Documents/maven/.m2/repertory/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar!/org/jsoup/Jsoup.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/DataSourceConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/RedisConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/RequestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="110" column="69" lean-forward="true" selection-start-line="110" selection-start-column="69" selection-end-line="110" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2685">
+          <caret line="210" column="31" lean-forward="false" selection-start-line="210" selection-start-column="24" selection-end-line="210" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/profile/dev/zk.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/CasLoginEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/StartApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/ZKPropertiesLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/annotion/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-          <folding>
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/common/CommonErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/user/UserErrorCode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/GlobalExceptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/catalog/CatalogErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/cases/ProjectErrorCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ErrorResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        <state relative-caret-position="375">
+          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/SuccessResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="99" column="23" lean-forward="false" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/WebConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/BaseResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/SecurityInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-generator/mybatis-generator.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
@@ -1371,10 +1448,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1383,145 +1470,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CasLoginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="1035">
+          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/CaseProjectService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICasLoginService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/ICatalogService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/request/AddCaseRequestVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="63" lean-forward="false" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+        <state relative-caret-position="114">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/service/impl/CatalogServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CatalogCrontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CommonCrontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/errorcode/CommonCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/CommonException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/util/HttpRequestUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1212">
-          <caret line="261" column="34" lean-forward="false" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/config/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="32" column="71" lean-forward="false" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/exception/BizException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#1487#1488#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/common/ResultBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="114" column="27" lean-forward="true" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/controller/CasCrontoller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="62" lean-forward="true" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/aop/RequestLogAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="90" column="46" lean-forward="false" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

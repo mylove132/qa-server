@@ -27,6 +27,8 @@ public class CaseEntity {
 
     private Integer jmeterId;
 
+    private Integer userId;
+
     public Integer getId() {
         return id;
     }
@@ -121,5 +123,13 @@ public class CaseEntity {
 
     public void setJmeterId(Integer jmeterId) {
         this.jmeterId = jmeterId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

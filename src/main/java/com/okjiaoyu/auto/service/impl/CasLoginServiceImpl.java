@@ -11,6 +11,7 @@ import com.okjiaoyu.auto.exception.BizException;
 import com.okjiaoyu.auto.service.ICasLoginService;
 import com.okjiaoyu.auto.util.HttpRequestUtil;
 import com.okjiaoyu.auto.vo.CasLoginEntity;
+import com.okjiaoyu.auto.vo.CaseEntity;
 import com.okjiaoyu.auto.vo.CookieEntity;
 import com.okjiaoyu.auto.vo.request.LoginRequestVo;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -93,6 +95,49 @@ public class CasLoginServiceImpl implements ICasLoginService {
         } catch (Exception e) {
             throw new BizException(e.getMessage());
         }
+    }
+
+    @Override
+    public ResultBody casLoginUpdateService(LoginRequestVo loginRequestVo) throws BizException {
+        int id = loginRequestVo.getId();
+        CasLoginEntity casLoginEntity = casLoginEntityMapper.selectByPrimaryKey(id);
+        if (casLoginEntity == null){
+            return ResultBody.error(CommonCode.REQUEST_PARAM_ERROR);
+        }
+        List<CookieEntity> oldCookies = cookieEntityMapper.queryCookiesByCasLoginId(id);
+        if (oldCookies == null || oldCookies.size()<=0){
+            return ResultBody.error("cookie不存在");
+        }
+        List<Cookie> cookies = null;
+        try {
+            cookies = HttpRequestUtil.casLogin(loginRequestVo);
+        }catch (Exception e){
+            throw new BizException("更新cookie失败:"+e.getMessage());
+        }
+        List<CookieEntity> newCookies = new ArrayList<>();
+        for (CookieEntity oldCookie:oldCookies){
+            for (Cookie cookie:cookies){
+                if (oldCookie.getcKey().equals(cookie.getName())){
+                    CookieEntity ck = new CookieEntity();
+                    ck.setcKey(cookie.getName());
+                    ck.setcValue(cookie.getValue());
+                    ck.setExpireTime(cookie.getExpiryDate());
+                    ck.setCreateTime(oldCookie.getCreateTime());
+                    ck.setUpdateTime(new Date());
+                    ck.setCasLoginId(oldCookie.getCasLoginId());
+                    ck.setCaseId(oldCookie.getCaseId());
+                    ck.setDomain(oldCookie.getDomain());
+                    ck.setId(oldCookie.getId());
+                    newCookies.add(ck);
+                }
+            }
+        }
+        for (CookieEntity newCookie:newCookies){
+            log.info("新的cookie key:{},value:{},expire:{},domain:{},id:{}",newCookie.getcKey(),newCookie.getcValue(),
+                    newCookie.getExpireTime(),newCookie.getDomain(),newCookie.getId());
+        }
+        cookieEntityMapper.updateCookieBatch(newCookies);
+        return ResultBody.success(true);
     }
 
     @Override

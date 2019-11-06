@@ -80,4 +80,9 @@ public class CatalogServiceImpl implements ICatalogService {
         }
         return ResultBody.success(true);
     }
+
+    @Override
+    public ResultBody queryCatalogById(int catalogId) {
+        return ResultBody.success(catalogEntityMapper.selectByPrimaryKey(catalogId));
+    }
 }

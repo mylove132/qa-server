@@ -17,6 +17,8 @@ public class CatalogEntity {
 
     private Integer envId;
 
+    private EnvEntity env;
+
     private List<CatalogEntity> children;
 
     public Integer getId() {
@@ -81,5 +83,13 @@ public class CatalogEntity {
 
     public void setChildren(List<CatalogEntity> children) {
         this.children = children;
+    }
+
+    public EnvEntity getEnv() {
+        return env;
+    }
+
+    public void setEnv(EnvEntity env) {
+        this.env = env;
     }
 }

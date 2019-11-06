@@ -210,7 +210,7 @@ public class HttpRequestUtil {
         try {
             doc = Jsoup.connect(url).get();
         } catch (IOException e) {
-            throw new RuntimeException("连接登录页面失败");
+            throw new BizException("连接登录页面失败:"+e.getMessage());
         }
         String lt = doc.select("input[name='lt']").first().val();
         String execution = doc.select("input[name='execution']").first().val();

@@ -24,4 +24,6 @@ public interface ICatalogService {
     ResultBody delCatalogService(int catalogId) throws BizException;
 
     ResultBody delCatalogService(int[] ids) throws BizException;
+
+    ResultBody queryCatalogById(int catalogId);
 }

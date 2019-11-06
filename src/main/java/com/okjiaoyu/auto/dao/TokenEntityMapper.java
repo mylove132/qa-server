@@ -16,4 +16,6 @@ public interface TokenEntityMapper {
     int updateByPrimaryKey(TokenEntity record);
 
     TokenEntity selectByToken(String token);
+
+    TokenEntity selectByUserId(int userId);
 }

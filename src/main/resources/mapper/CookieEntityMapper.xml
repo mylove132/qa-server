@@ -157,4 +157,34 @@
       cas_login_id = #{casLoginId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="queryCookiesByCasLoginId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from entity_cookie
+    where cas_login_id = #{casLoginId,jdbcType=INTEGER}
+  </select>
+  <update id="updateCookieBatch" parameterType="list" keyProperty="id" useGeneratedKeys="true">
+    <foreach collection="list" index="index" item="item" open="" separator=";" close="">
+      update entity_cookie
+      <set>
+        c_key = #{item.cKey,jdbcType=VARCHAR},
+        c_value = #{item.cValue,jdbcType=LONGVARCHAR},
+        domain = #{item.domain,jdbcType=VARCHAR},
+        expire_time = #{item.expireTime,jdbcType=TIMESTAMP},
+        case_id = #{item.caseId,jdbcType=INTEGER},
+        update_time=#{item.updateTime,jdbcType=TIMESTAMP},
+        create_time=#{item.createTime,jdbcType=TIMESTAMP}
+      </set>
+      WHERE id = #{item.id}
+    </foreach>
+  </update>
+  <delete id="delCookiesById" parameterType="list">
+    delete from entity_cookie
+    <foreach collection="list" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+
 </mapper>

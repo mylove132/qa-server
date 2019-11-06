@@ -17,5 +17,7 @@ public interface ICasLoginService {
 
     ResultBody casLoginTestService(LoginRequestVo loginRequestVo) throws BizException;
 
+    ResultBody casLoginUpdateService(LoginRequestVo loginRequestVo) throws BizException;
+
     ResultBody queryUserCookiesService(Integer pageNum, Integer pageSize) throws BizException;
 }

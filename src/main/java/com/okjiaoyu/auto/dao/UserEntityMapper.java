@@ -1,6 +1,9 @@
 package com.okjiaoyu.auto.dao;
 
 import com.okjiaoyu.auto.vo.UserEntity;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserEntityMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,10 @@ public interface UserEntityMapper {
     int updateByPrimaryKeySelective(UserEntity record);
 
     int updateByPrimaryKey(UserEntity record);
+
+    List<UserEntity> queryUserList();
+
+    UserEntity selectByEmail(@Param("email") String email);
+
+    UserEntity selectByAccount(@Param("account") String account);
 }

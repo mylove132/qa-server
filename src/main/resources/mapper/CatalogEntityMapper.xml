@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.okjiaoyu.auto.dao.CatalogEntityMapper">
+  <resultMap id="ResultMap" type="com.okjiaoyu.auto.vo.CatalogEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="protocol_id" jdbcType="INTEGER" property="protocolId" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="env_id" jdbcType="INTEGER" property="envId" />
+    <collection property="env" column="env_id" select="queryEnvMap"></collection>
+  </resultMap>
   <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CatalogEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -14,8 +24,8 @@
   <sql id="Base_Column_List">
     id, name, pid, protocol_id, icon, level, env_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMap">
+    select
     <include refid="Base_Column_List" />
     from entity_catalog
     where id = #{id,jdbcType=INTEGER}
@@ -25,11 +35,11 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
-    insert into entity_catalog (id, name, pid, 
-      protocol_id, icon, level, 
+    insert into entity_catalog (id, name, pid,
+      protocol_id, icon, level,
       env_id)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
-      #{protocolId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER},
+      #{protocolId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER},
       #{envId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
@@ -127,6 +137,12 @@
     <include refid="Base_Column_List" />
     from entity_catalog
     WHERE pid = #{id}
+  </select>
+  <select id="queryEnvMap" parameterType="java.lang.Integer" resultType="com.okjiaoyu.auto.vo.EnvEntity">
+    select
+    id,name
+    from entity_env
+    WHERE id = #{env_id}
   </select>
 
 </mapper>

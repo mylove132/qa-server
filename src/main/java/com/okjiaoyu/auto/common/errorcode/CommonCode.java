@@ -13,6 +13,7 @@ public enum CommonCode implements BaseResponse {
     NOT_FOUND(404, "未找到该资源!"),
     INTERNAL_SERVER_ERROR(500, "服务器内部错误!"),
     SERVER_BUSY(503, "服务器正忙，请稍后再试!"),
+    REQUEST_PARAM_ERROR(40000,"请求参数错误"),
     REQUEST_METHOD_SUPPORT_ERROR(40001,"当前请求方法不支持");
     /**
      * 错误码

@@ -15,6 +15,8 @@ public class UserEntity {
 
     private Date updateTime;
 
+    private String password;
+
     public Integer getId() {
         return id;
     }
@@ -61,5 +63,13 @@ public class UserEntity {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 }

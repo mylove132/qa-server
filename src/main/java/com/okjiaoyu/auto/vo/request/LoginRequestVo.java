@@ -8,9 +8,18 @@ package com.okjiaoyu.auto.vo.request;
  */
 public class LoginRequestVo {
 
+    private int id;
     private String url;
     private String username;
     private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUrl() {
         return url;

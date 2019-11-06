@@ -3,7 +3,6 @@
 <mapper namespace="com.okjiaoyu.auto.dao.ParamEntityMapper">
   <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.ParamEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="key" jdbcType="VARCHAR" property="key" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="isJson" jdbcType="TINYINT" property="isjson" />
@@ -13,7 +12,7 @@
     <result column="value" jdbcType="LONGVARCHAR" property="value" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, key, create_time, update_time, isJson, case_id
+    id, create_time, update_time, isJson, case_id
   </sql>
   <sql id="Blob_Column_List">
     value
@@ -31,21 +30,18 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
-    insert into entity_param (id, key, create_time, 
-      update_time, isJson, case_id, 
-      value)
-    values (#{id,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{isjson,jdbcType=TINYINT}, #{caseId,jdbcType=INTEGER}, 
-      #{value,jdbcType=LONGVARCHAR})
+    insert into entity_param (id, create_time, update_time, 
+      isJson, case_id, value
+      )
+    values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{isjson,jdbcType=TINYINT}, #{caseId,jdbcType=INTEGER}, #{value,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
     insert into entity_param
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
-      </if>
-      <if test="key != null">
-        key,
       </if>
       <if test="createTime != null">
         create_time,
@@ -67,9 +63,6 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="key != null">
-        #{key,jdbcType=VARCHAR},
-      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -90,9 +83,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
     update entity_param
     <set>
-      <if test="key != null">
-        key = #{key,jdbcType=VARCHAR},
-      </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -113,8 +103,7 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
     update entity_param
-    set key = #{key,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       isJson = #{isjson,jdbcType=TINYINT},
       case_id = #{caseId,jdbcType=INTEGER},
@@ -123,8 +112,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
     update entity_param
-    set key = #{key,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       isJson = #{isjson,jdbcType=TINYINT},
       case_id = #{caseId,jdbcType=INTEGER}

@@ -5,9 +5,9 @@ import java.util.Date;
 public class HeaderEntity {
     private Integer id;
 
-    private String key;
+    private String cKey;
 
-    private String value;
+    private String cValue;
 
     private Date createTime;
 
@@ -23,20 +23,20 @@ public class HeaderEntity {
         this.id = id;
     }
 
-    public String getKey() {
-        return key;
+    public String getcKey() {
+        return cKey;
     }
 
-    public void setKey(String key) {
-        this.key = key == null ? null : key.trim();
+    public void setcKey(String cKey) {
+        this.cKey = cKey == null ? null : cKey.trim();
     }
 
-    public String getValue() {
-        return value;
+    public String getcValue() {
+        return cValue;
     }
 
-    public void setValue(String value) {
-        this.value = value == null ? null : value.trim();
+    public void setcValue(String cValue) {
+        this.cValue = cValue == null ? null : cValue.trim();
     }
 
     public Date getCreateTime() {

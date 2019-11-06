@@ -3,14 +3,14 @@
 <mapper namespace="com.okjiaoyu.auto.dao.HeaderEntityMapper">
   <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.HeaderEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="key" jdbcType="VARCHAR" property="key" />
-    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="c_key" jdbcType="VARCHAR" property="cKey" />
+    <result column="c_value" jdbcType="VARCHAR" property="cValue" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="case_id" jdbcType="INTEGER" property="caseId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, key, value, create_time, update_time, case_id
+    id, c_key, c_value, create_time, update_time, case_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,10 +23,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.okjiaoyu.auto.vo.HeaderEntity">
-    insert into entity_header (id, key, value, 
+    insert into entity_header (id, c_key, c_value, 
       create_time, update_time, case_id
       )
-    values (#{id,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{cKey,jdbcType=VARCHAR}, #{cValue,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{caseId,jdbcType=INTEGER}
       )
   </insert>
@@ -36,11 +36,11 @@
       <if test="id != null">
         id,
       </if>
-      <if test="key != null">
-        key,
+      <if test="cKey != null">
+        c_key,
       </if>
-      <if test="value != null">
-        value,
+      <if test="cValue != null">
+        c_value,
       </if>
       <if test="createTime != null">
         create_time,
@@ -56,11 +56,11 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="key != null">
-        #{key,jdbcType=VARCHAR},
+      <if test="cKey != null">
+        #{cKey,jdbcType=VARCHAR},
       </if>
-      <if test="value != null">
-        #{value,jdbcType=VARCHAR},
+      <if test="cValue != null">
+        #{cValue,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -76,11 +76,11 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.HeaderEntity">
     update entity_header
     <set>
-      <if test="key != null">
-        key = #{key,jdbcType=VARCHAR},
+      <if test="cKey != null">
+        c_key = #{cKey,jdbcType=VARCHAR},
       </if>
-      <if test="value != null">
-        value = #{value,jdbcType=VARCHAR},
+      <if test="cValue != null">
+        c_value = #{cValue,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -96,8 +96,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.HeaderEntity">
     update entity_header
-    set key = #{key,jdbcType=VARCHAR},
-      value = #{value,jdbcType=VARCHAR},
+    set c_key = #{cKey,jdbcType=VARCHAR},
+      c_value = #{cValue,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       case_id = #{caseId,jdbcType=INTEGER}

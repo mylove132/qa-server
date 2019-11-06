@@ -5,8 +5,6 @@ import java.util.Date;
 public class ParamEntity {
     private Integer id;
 
-    private String key;
-
     private Date createTime;
 
     private Date updateTime;
@@ -23,14 +21,6 @@ public class ParamEntity {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key == null ? null : key.trim();
     }
 
     public Date getCreateTime() {

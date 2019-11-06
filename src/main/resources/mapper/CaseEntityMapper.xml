@@ -14,10 +14,11 @@
     <result column="request_way_id" jdbcType="INTEGER" property="requestWayId" />
     <result column="dubbo_id" jdbcType="INTEGER" property="dubboId" />
     <result column="jmeter_id" jdbcType="INTEGER" property="jmeterId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, name, catalog_id, timeout, url, isCas, depend_ids, create_time, update_time, 
-    request_way_id, dubbo_id, jmeter_id
+    request_way_id, dubbo_id, jmeter_id, user_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -33,13 +34,13 @@
     insert into entity_case (id, name, catalog_id, 
       timeout, url, isCas, 
       depend_ids, create_time, update_time, 
-      request_way_id, dubbo_id, jmeter_id
-      )
+      request_way_id, dubbo_id, jmeter_id, 
+      user_id)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{catalogId,jdbcType=INTEGER}, 
       #{timeout,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{iscas,jdbcType=TINYINT}, 
       #{dependIds,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{requestWayId,jdbcType=INTEGER}, #{dubboId,jdbcType=INTEGER}, #{jmeterId,jdbcType=INTEGER}
-      )
+      #{requestWayId,jdbcType=INTEGER}, #{dubboId,jdbcType=INTEGER}, #{jmeterId,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.CaseEntity">
     insert into entity_case
@@ -80,6 +81,9 @@
       <if test="jmeterId != null">
         jmeter_id,
       </if>
+      <if test="userId != null">
+        user_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -117,6 +121,9 @@
       </if>
       <if test="jmeterId != null">
         #{jmeterId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -156,6 +163,9 @@
       <if test="jmeterId != null">
         jmeter_id = #{jmeterId,jdbcType=INTEGER},
       </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -171,14 +181,8 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       request_way_id = #{requestWayId,jdbcType=INTEGER},
       dubbo_id = #{dubboId,jdbcType=INTEGER},
-      jmeter_id = #{jmeterId,jdbcType=INTEGER}
+      jmeter_id = #{jmeterId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="queryCasesByCatalogId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from entity_case
-    where catalog_id = #{catalogId,jdbcType=INTEGER}
-  </select>
-
 </mapper>

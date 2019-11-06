@@ -1,10 +1,13 @@
 package com.okjiaoyu.auto.controller;
 
+import com.okjiaoyu.auto.annotion.AuthPermission;
 import com.okjiaoyu.auto.annotion.Operation;
 import com.okjiaoyu.auto.common.ResultBody;
+import com.okjiaoyu.auto.common.constant.PermissionConstant;
 import com.okjiaoyu.auto.service.ICatalogService;
 import com.okjiaoyu.auto.vo.CatalogEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +31,7 @@ public class CatalogCrontroller {
         return ResultBody.success(catalogService.catalogListService());
     }
 
+    @AuthPermission(PermissionConstant.VIP)
     @Operation("添加目录")
     @RequestMapping(method = RequestMethod.POST)
     public ResultBody addCatalogCrontroller(CatalogEntity catalogEntity){
@@ -38,6 +42,12 @@ public class CatalogCrontroller {
     @RequestMapping(method = RequestMethod.PUT)
     public ResultBody updateCatalogCrontroller(CatalogEntity catalogEntity){
         return catalogService.updateCatalogService(catalogEntity);
+    }
+
+    @Operation("通过id查询项目目录")
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public ResultBody getCatalogCatalogCrontroller(@PathVariable(value = "id") int catalogId){
+        return catalogService.queryCatalogById(catalogId);
     }
 
     @Operation("删除目录")
