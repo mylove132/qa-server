@@ -19,11 +19,67 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_3_141_59.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_3_141_59.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/AssertTypeVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/AssertVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/ElementLocatorTypeVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/ElementOperateVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/ElementVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/PageOperateVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/PageVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/beans/WebCaseVO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/controller/WebCaseCrontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/AssertTypeVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/AssertVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/ElementLocatorTypeVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/ElementOperateVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/ElementVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/PageOperateVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/PageVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/dao/WebCaseVOMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/service/IWebCaseService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/service/impl/WebServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/util/TestNGListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/blingabc/auto/util/WebDriverUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/dao/ElementVOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/okjiaoyu/auto/vo/ElementVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AssertTypeVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AssertVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ElementLocatorTypeVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ElementOperateVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ElementVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PageOperateVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PageVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/WebCaseVOMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Command line suite/Command line test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Command line suite/Command line test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/Command line suite/testng-failed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/bullet_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/collapseall.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/failed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/jquery-1.7.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.blingabc.auto.service.impl.WebServiceImpl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/navigator-bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/Command line test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/classes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/groups.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/methods-alphabetical.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/methods-not-run.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/methods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/reporter-output.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/testng.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/Command line suite/toc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/old/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/passed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/skipped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/testng-reports.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/testng-reports.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/testng.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
