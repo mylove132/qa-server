@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.ParamEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.ParamEntity">
+<mapper namespace="com.blingabc.auto.dao.ParamEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.ParamEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="isJson" jdbcType="TINYINT" property="isjson" />
     <result column="case_id" jdbcType="INTEGER" property="caseId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.okjiaoyu.auto.vo.ParamEntity">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.blingabc.auto.vo.ParamEntity">
     <result column="value" jdbcType="LONGVARCHAR" property="value" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -29,7 +29,7 @@
     delete from entity_param
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.ParamEntity">
     insert into entity_param (id, create_time, update_time, 
       isJson, case_id, value
       )
@@ -37,7 +37,7 @@
       #{isjson,jdbcType=TINYINT}, #{caseId,jdbcType=INTEGER}, #{value,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.ParamEntity">
     insert into entity_param
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.ParamEntity">
     update entity_param
     <set>
       <if test="createTime != null">
@@ -101,7 +101,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blingabc.auto.vo.ParamEntity">
     update entity_param
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -110,7 +110,7 @@
       value = #{value,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.ParamEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.ParamEntity">
     update entity_param
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},

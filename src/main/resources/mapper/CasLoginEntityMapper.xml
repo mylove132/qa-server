@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.CasLoginEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CasLoginEntity">
+<mapper namespace="com.blingabc.auto.dao.CasLoginEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.CasLoginEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -13,7 +13,7 @@
     <collection property="cookies" column="id" select="queryCookiesMap"></collection>
     <collection property="env" column="env_id" select="queryEnvMap"></collection>
   </resultMap>
-  <resultMap id="CookieResultMap" type="com.okjiaoyu.auto.vo.CookieEntity">
+  <resultMap id="CookieResultMap" type="com.blingabc.auto.vo.CookieEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="c_key" jdbcType="VARCHAR" property="cKey" />
     <result column="c_value" jdbcType="LONGVARCHAR" property="cValue" />
@@ -24,7 +24,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="cas_login_id" jdbcType="INTEGER" property="casLoginId" />
   </resultMap>
-  <resultMap id="EnvResultMap" type="com.okjiaoyu.auto.vo.EnvEntity">
+  <resultMap id="EnvResultMap" type="com.blingabc.auto.vo.EnvEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
@@ -47,7 +47,7 @@
     delete from entity_cas_login
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.CasLoginEntity">
     insert into entity_cas_login (id, username, password,
       env_id, domain, name,create_time,update_time
       )
@@ -55,7 +55,7 @@
       #{envId,jdbcType=INTEGER}, #{domain,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},#{createTime},#{updateTime}
       )
   </insert>
-  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.blingabc.auto.vo.CasLoginEntity">
     insert into entity_cas_login
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -110,7 +110,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.CasLoginEntity">
     update entity_cas_login
     <set>
       <if test="username != null">
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.CasLoginEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.CasLoginEntity">
     update entity_cas_login
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

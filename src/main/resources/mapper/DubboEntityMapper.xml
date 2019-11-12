@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.DubboEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.DubboEntity">
+<mapper namespace="com.blingabc.auto.dao.DubboEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.DubboEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="request_service_name" jdbcType="VARCHAR" property="requestServiceName" />
     <result column="request_method_name" jdbcType="VARCHAR" property="requestMethodName" />
@@ -20,13 +20,13 @@
     delete from entity_dubbo
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.DubboEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.DubboEntity">
     insert into entity_dubbo (id, request_service_name, request_method_name, 
       request_bean_name)
     values (#{id,jdbcType=INTEGER}, #{requestServiceName,jdbcType=VARCHAR}, #{requestMethodName,jdbcType=VARCHAR}, 
       #{requestBeanName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.DubboEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.DubboEntity">
     insert into entity_dubbo
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.DubboEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.DubboEntity">
     update entity_dubbo
     <set>
       <if test="requestServiceName != null">
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.DubboEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.DubboEntity">
     update entity_dubbo
     set request_service_name = #{requestServiceName,jdbcType=VARCHAR},
       request_method_name = #{requestMethodName,jdbcType=VARCHAR},

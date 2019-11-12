@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.CookieEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CookieEntity">
+<mapper namespace="com.blingabc.auto.dao.CookieEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.CookieEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="c_key" jdbcType="VARCHAR" property="cKey" />
     <result column="c_key" jdbcType="VARCHAR" property="cKey" />
@@ -12,7 +12,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="cas_login_id" jdbcType="INTEGER" property="casLoginId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.okjiaoyu.auto.vo.CookieEntity">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.blingabc.auto.vo.CookieEntity">
     <result column="c_value" jdbcType="LONGVARCHAR" property="cValue" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -33,7 +33,7 @@
     delete from entity_cookie
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CookieEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.CookieEntity">
     insert into entity_cookie (id, c_key, domain,
       expire_time, case_id, create_time,
       update_time, cas_login_id, c_value
@@ -43,7 +43,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{casLoginId,jdbcType=INTEGER}, #{cValue,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.CookieEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.CookieEntity">
     insert into entity_cookie
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.CookieEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.CookieEntity">
     update entity_cookie
     <set>
       <if test="cKey != null">
@@ -134,7 +134,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.okjiaoyu.auto.vo.CookieEntity">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blingabc.auto.vo.CookieEntity">
     update entity_cookie
     set c_key = #{cKey,jdbcType=VARCHAR},
       domain = #{domain,jdbcType=VARCHAR},
@@ -146,7 +146,7 @@
       c_value = #{cValue,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.CookieEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.CookieEntity">
     update entity_cookie
     set c_key = #{cKey,jdbcType=VARCHAR},
       domain = #{domain,jdbcType=VARCHAR},

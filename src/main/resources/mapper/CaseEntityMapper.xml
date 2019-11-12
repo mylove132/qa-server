@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.CaseEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CaseEntity">
+<mapper namespace="com.blingabc.auto.dao.CaseEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.CaseEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="catalog_id" jdbcType="INTEGER" property="catalogId" />
@@ -30,7 +30,7 @@
     delete from entity_case
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CaseEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.CaseEntity">
     insert into entity_case (id, name, catalog_id, 
       timeout, url, isCas, 
       depend_ids, create_time, update_time, 
@@ -42,7 +42,7 @@
       #{requestWayId,jdbcType=INTEGER}, #{dubboId,jdbcType=INTEGER}, #{jmeterId,jdbcType=INTEGER}, 
       #{userId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.CaseEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.CaseEntity">
     insert into entity_case
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.CaseEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.CaseEntity">
     update entity_case
     <set>
       <if test="name != null">
@@ -169,7 +169,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.CaseEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.CaseEntity">
     update entity_case
     set name = #{name,jdbcType=VARCHAR},
       catalog_id = #{catalogId,jdbcType=INTEGER},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.JmeterEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.JmeterEntity">
+<mapper namespace="com.blingabc.auto.dao.JmeterEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.JmeterEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="pre_time" jdbcType="INTEGER" property="preTime" />
     <result column="pre_number" jdbcType="INTEGER" property="preNumber" />
@@ -19,13 +19,13 @@
     delete from entity_jmeter
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.JmeterEntity">
     insert into entity_jmeter (id, pre_time, pre_number
       )
     values (#{id,jdbcType=INTEGER}, #{preTime,jdbcType=INTEGER}, #{preNumber,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.JmeterEntity">
     insert into entity_jmeter
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.JmeterEntity">
     update entity_jmeter
     <set>
       <if test="preTime != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.JmeterEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.JmeterEntity">
     update entity_jmeter
     set pre_time = #{preTime,jdbcType=INTEGER},
       pre_number = #{preNumber,jdbcType=INTEGER}

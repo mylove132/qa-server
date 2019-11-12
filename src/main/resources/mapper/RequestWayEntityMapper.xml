@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.RequestWayEntityMapper">
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.RequestWayEntity">
+<mapper namespace="com.blingabc.auto.dao.RequestWayEntityMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.RequestWayEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="way" jdbcType="VARCHAR" property="way" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from entity_request_way
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.RequestWayEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.RequestWayEntity">
     insert into entity_request_way (id, way)
     values (#{id,jdbcType=INTEGER}, #{way,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.RequestWayEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.RequestWayEntity">
     insert into entity_request_way
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.RequestWayEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.RequestWayEntity">
     update entity_request_way
     <set>
       <if test="way != null">
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.RequestWayEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.RequestWayEntity">
     update entity_request_way
     set way = #{way,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

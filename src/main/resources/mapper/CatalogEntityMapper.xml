@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.okjiaoyu.auto.dao.CatalogEntityMapper">
-  <resultMap id="ResultMap" type="com.okjiaoyu.auto.vo.CatalogEntity">
+<mapper namespace="com.blingabc.auto.dao.CatalogEntityMapper">
+  <resultMap id="ResultMap" type="com.blingabc.auto.vo.CatalogEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
@@ -11,7 +11,7 @@
     <result column="env_id" jdbcType="INTEGER" property="envId" />
     <collection property="env" column="env_id" select="queryEnvMap"></collection>
   </resultMap>
-  <resultMap id="BaseResultMap" type="com.okjiaoyu.auto.vo.CatalogEntity">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.CatalogEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
@@ -19,7 +19,7 @@
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="level" jdbcType="INTEGER" property="level" />
     <result column="env_id" jdbcType="INTEGER" property="envId" />
-    <collection property="children" ofType="com.okjiaoyu.auto.vo.CatalogEntity" column="id" select="queryCatalogMap"></collection>
+    <collection property="children" ofType="com.blingabc.auto.vo.CatalogEntity" column="id" select="queryCatalogMap"></collection>
   </resultMap>
   <sql id="Base_Column_List">
     id, name, pid, protocol_id, icon, level, env_id
@@ -34,7 +34,7 @@
     delete from entity_catalog
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.vo.CatalogEntity">
     insert into entity_catalog (id, name, pid,
       protocol_id, icon, level,
       env_id)
@@ -42,7 +42,7 @@
       #{protocolId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER},
       #{envId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.CatalogEntity">
     insert into entity_catalog
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -91,7 +91,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.CatalogEntity">
     update entity_catalog
     <set>
       <if test="name != null">
@@ -115,7 +115,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.okjiaoyu.auto.vo.CatalogEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.CatalogEntity">
     update entity_catalog
     set name = #{name,jdbcType=VARCHAR},
       pid = #{pid,jdbcType=INTEGER},
@@ -138,7 +138,7 @@
     from entity_catalog
     WHERE pid = #{id}
   </select>
-  <select id="queryEnvMap" parameterType="java.lang.Integer" resultType="com.okjiaoyu.auto.vo.EnvEntity">
+  <select id="queryEnvMap" parameterType="java.lang.Integer" resultType="com.blingabc.auto.vo.EnvEntity">
     select
     id,name
     from entity_env
