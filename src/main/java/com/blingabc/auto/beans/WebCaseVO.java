@@ -11,6 +11,8 @@ public class WebCaseVO {
 
     private Date updateTime;
 
+    private String depend;
+
     private String cases;
 
     public Integer getId() {
@@ -43,6 +45,14 @@ public class WebCaseVO {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getDepend() {
+        return depend;
+    }
+
+    public void setDepend(String depend) {
+        this.depend = depend == null ? null : depend.trim();
     }
 
     public String getCases() {

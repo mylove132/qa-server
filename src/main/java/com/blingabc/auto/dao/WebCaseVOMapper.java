@@ -1,7 +1,9 @@
 package com.blingabc.auto.dao;
 
 import com.blingabc.auto.beans.WebCaseVO;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface WebCaseVOMapper {
     int deleteByPrimaryKey(Integer id);
 

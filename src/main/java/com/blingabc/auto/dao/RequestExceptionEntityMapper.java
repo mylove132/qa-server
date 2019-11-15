@@ -1,5 +1,4 @@
 package com.blingabc.auto.dao;
-
 import com.blingabc.auto.vo.RequestExceptionEntity;
 
 public interface RequestExceptionEntityMapper {

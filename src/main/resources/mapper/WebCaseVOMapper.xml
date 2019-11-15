@@ -6,12 +6,13 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="depend" jdbcType="VARCHAR" property="depend" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.blingabc.auto.beans.WebCaseVO">
     <result column="cases" jdbcType="LONGVARCHAR" property="cases" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, create_time, update_time
+    id, name, create_time, update_time, depend
   </sql>
   <sql id="Blob_Column_List">
     cases
@@ -30,9 +31,11 @@
   </delete>
   <insert id="insert" parameterType="com.blingabc.auto.beans.WebCaseVO">
     insert into entity_web_case (id, name, create_time, 
-      update_time, cases)
+      update_time, depend, cases
+      )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{cases,jdbcType=LONGVARCHAR})
+      #{updateTime,jdbcType=TIMESTAMP}, #{depend,jdbcType=VARCHAR}, #{cases,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.blingabc.auto.beans.WebCaseVO">
     insert into entity_web_case
@@ -48,6 +51,9 @@
       </if>
       <if test="updateTime != null">
         update_time,
+      </if>
+      <if test="depend != null">
+        depend,
       </if>
       <if test="cases != null">
         cases,
@@ -66,6 +72,9 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="depend != null">
+        #{depend,jdbcType=VARCHAR},
+      </if>
       <if test="cases != null">
         #{cases,jdbcType=LONGVARCHAR},
       </if>
@@ -83,6 +92,9 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="depend != null">
+        depend = #{depend,jdbcType=VARCHAR},
+      </if>
       <if test="cases != null">
         cases = #{cases,jdbcType=LONGVARCHAR},
       </if>
@@ -94,6 +106,7 @@
     set name = #{name,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
+      depend = #{depend,jdbcType=VARCHAR},
       cases = #{cases,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -101,7 +114,8 @@
     update entity_web_case
     set name = #{name,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      depend = #{depend,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
