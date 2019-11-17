@@ -1,5 +1,5 @@
 package com.blingabc.auto.dao;
-import com.blingabc.auto.vo.RequestExceptionEntity;
+import com.blingabc.auto.beans.RequestExceptionEntity;
 
 public interface RequestExceptionEntityMapper {
     int deleteByPrimaryKey(Integer id);

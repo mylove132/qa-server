@@ -1,5 +1,5 @@
 package com.blingabc.auto.dao;
-import com.blingabc.auto.vo.RequestLogEntity;
+import com.blingabc.auto.beans.RequestLogEntity;
 
 public interface RequestLogEntityMapper {
     int deleteByPrimaryKey(Integer id);

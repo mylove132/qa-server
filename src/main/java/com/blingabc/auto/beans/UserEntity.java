@@ -1,4 +1,4 @@
-package com.blingabc.auto.vo;
+package com.blingabc.auto.beans;
 
 import java.util.Date;
 

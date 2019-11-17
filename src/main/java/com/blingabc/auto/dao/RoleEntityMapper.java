@@ -1,6 +1,6 @@
 package com.blingabc.auto.dao;
 
-import com.blingabc.auto.vo.RoleEntity;
+import com.blingabc.auto.beans.RoleEntity;
 
 public interface RoleEntityMapper {
     int deleteByPrimaryKey(Integer id);

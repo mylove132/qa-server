@@ -1,6 +1,7 @@
 package com.blingabc.auto.dao;
 
 import com.blingabc.auto.beans.CatalogVO;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface CatalogVOMapper {
 
     int updateByPrimaryKey(CatalogVO record);
 
-    List<CatalogVO> queryCatalogList();
+    List<CatalogVO> queryCatalogList(@RequestParam("type") String type);
 }

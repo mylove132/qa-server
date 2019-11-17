@@ -99,11 +99,11 @@
       type = #{type,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="queryCatalogList" parameterType="java.lang.Integer" resultMap="BaseTreeMap">
+  <select id="queryCatalogList" resultMap="BaseTreeMap">
     select
     <include refid="Base_Column_List" />
     from entity_catalog
-    WHERE parent_id ='' or parent_id is NULL
+    WHERE parent_id ='' or parent_id is NULL AND type=#{type}
   </select>
 
   <select id="getCatalogChildrens" parameterType="java.lang.Integer" resultMap="BaseTreeMap">

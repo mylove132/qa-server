@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blingabc.auto.dao.UserEntityMapper">
-  <resultMap id="BaseResultMap" type="com.blingabc.auto.vo.UserEntity">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.beans.UserEntity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="email" jdbcType="VARCHAR" property="email" />
@@ -23,7 +23,7 @@
     delete from entity_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.blingabc.auto.vo.UserEntity">
+  <insert id="insert" parameterType="com.blingabc.auto.beans.UserEntity">
     insert into entity_user (id, name, email,
       role_id, create_time, update_time,
       password)
@@ -31,7 +31,7 @@
       #{roleId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
       #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.blingabc.auto.vo.UserEntity">
+  <insert id="insertSelective" parameterType="com.blingabc.auto.beans.UserEntity">
     insert into entity_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.vo.UserEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.beans.UserEntity">
     update entity_user
     <set>
       <if test="name != null">
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.vo.UserEntity">
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.beans.UserEntity">
     update entity_user
     set name = #{name,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 package com.blingabc.auto.service;
 
 
-import com.blingabc.auto.vo.UserEntity;
+import com.blingabc.auto.beans.UserEntity;
 
 import java.util.List;
 

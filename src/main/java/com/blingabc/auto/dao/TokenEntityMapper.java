@@ -1,6 +1,6 @@
 package com.blingabc.auto.dao;
 
-import com.blingabc.auto.vo.TokenEntity;
+import com.blingabc.auto.beans.TokenEntity;
 
 public interface TokenEntityMapper {
     int deleteByPrimaryKey(Integer id);

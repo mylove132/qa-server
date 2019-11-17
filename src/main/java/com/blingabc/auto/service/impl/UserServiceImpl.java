@@ -1,7 +1,7 @@
 package com.blingabc.auto.service.impl;
 
 import com.blingabc.auto.dao.UserEntityMapper;
-import com.blingabc.auto.vo.UserEntity;
+import com.blingabc.auto.beans.UserEntity;
 import com.github.pagehelper.PageHelper;
 import com.blingabc.auto.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;

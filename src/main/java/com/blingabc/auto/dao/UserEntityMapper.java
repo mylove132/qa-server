@@ -1,6 +1,6 @@
 package com.blingabc.auto.dao;
 
-import com.blingabc.auto.vo.UserEntity;
+import com.blingabc.auto.beans.UserEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
