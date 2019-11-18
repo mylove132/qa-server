@@ -42,7 +42,7 @@
     </profiles>
 
     <properties>
-        <mysql-connection-java.version>5.1.32</mysql-connection-java.version>
+        <mysql-connection-java.version>8.0.13</mysql-connection-java.version>
         <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
         <slf4j.version>1.7.5</slf4j.version>
         <dangdang.version>3.2.4-RELEASE</dangdang.version>
