@@ -8,7 +8,7 @@ public class HttpRequestVO {
 
     private String requestWay;
 
-    private Map<String,Object> header;
+    private Object header;
 
     private String paramType;
 
@@ -24,11 +24,11 @@ public class HttpRequestVO {
         this.url = url;
     }
 
-    public Map<String, Object> getHeader() {
+    public Object getHeader() {
         return header;
     }
 
-    public void setHeader(Map<String, Object> header) {
+    public void setHeader(Object header) {
         this.header = header;
     }
 

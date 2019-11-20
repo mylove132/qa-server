@@ -29,8 +29,9 @@ public class OkHttpUtil {
                 .connectTimeout(requestVO.getConnectionTimeOut(),TimeUnit.MILLISECONDS)
                 .build();
         Request.Builder build = new Request.Builder().url(requestVO.getUrl());
-        if (requestVO.getHeader() != null && MapUtils.isNotEmpty(requestVO.getHeader())){
-            for (Map.Entry<String, Object> entry:requestVO.getHeader().entrySet()){
+        if (requestVO.getHeader() != null && !requestVO.getHeader().toString().equals("")){
+            Map<String,Object> headerMap = JSONObject.parseObject(requestVO.getHeader().toString(),Map.class);
+            for (Map.Entry<String, Object> entry:headerMap.entrySet()){
                 build.addHeader(entry.getKey(),entry.getValue().toString());
             }
         }
@@ -61,8 +62,9 @@ public class OkHttpUtil {
                 .connectTimeout(requestVO.getConnectionTimeOut(), TimeUnit.MILLISECONDS)
                 .build();
         Request.Builder build = new Request.Builder().url(requestVO.getUrl());
-        if (requestVO.getHeader() != null && MapUtils.isNotEmpty(requestVO.getHeader())){
-            for (Map.Entry<String, Object> entry:requestVO.getHeader().entrySet()){
+        if (requestVO.getHeader() != null && !requestVO.getHeader().toString().equals("")){
+            Map<String,Object> headerMap = JSONObject.parseObject(requestVO.getHeader().toString(),Map.class);
+            for (Map.Entry<String, Object> entry:headerMap.entrySet()){
                 build.addHeader(entry.getKey(),entry.getValue().toString());
             }
         }
@@ -148,8 +150,9 @@ public class OkHttpUtil {
         switch (requestVO.getRequestWay().toUpperCase()){
             case "GET":
                 result.append("curl -X GET ").append("'"+requestVO.getUrl()+"' ");
-                if (requestVO.getHeader() != null && MapUtils.isNotEmpty(requestVO.getHeader())){
-                    for (Map.Entry<String, Object> headerMap:requestVO.getHeader().entrySet()){
+                if (requestVO.getHeader() != null && !requestVO.getHeader().toString().equals("")){
+                    Map<String,Object> hMap = JSONObject.parseObject(requestVO.getHeader().toString(),Map.class);
+                    for (Map.Entry<String, Object> headerMap:hMap.entrySet()){
                         result.append("-H '"+headerMap.getKey()+":"+headerMap.getValue().toString()+"' ");
                     }
                     return result.toString();
@@ -157,8 +160,9 @@ public class OkHttpUtil {
                 break;
             case "POST":
                 result.append("curl -X POST "+"\r\n").append("'"+requestVO.getUrl()+"' "+"\r\n");
-                if (requestVO.getHeader() != null && MapUtils.isNotEmpty(requestVO.getHeader())){
-                    for (Map.Entry<String, Object> headerMap:requestVO.getHeader().entrySet()){
+                if (requestVO.getHeader() != null && !requestVO.getHeader().toString().equals("")){
+                    Map<String,Object> hMap = JSONObject.parseObject(requestVO.getHeader().toString(),Map.class);
+                    for (Map.Entry<String, Object> headerMap:hMap.entrySet()){
                         result.append("-H '"+headerMap.getKey()+":"+headerMap.getValue().toString()+"' "+"\r\n");
                     }
                 }
