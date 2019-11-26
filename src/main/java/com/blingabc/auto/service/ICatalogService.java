@@ -12,7 +12,7 @@ import java.util.List;
  * Modify date: 2019-11-16:07:22
  */
 public interface ICatalogService {
-    List<CatalogVO> queryCatalogListService(String type);
+    List<CatalogVO> queryCatalogListService(Integer caseTypeId, Integer userId, Integer envId);
 
     ResultBody updateCatalogService(CatalogVO catalogVO);
 

@@ -11,7 +11,21 @@ public class CatalogVO {
 
     private Integer parentId;
 
+    private Integer envId;
+
+    private Integer userId;
+
     private String type;
+
+    private Integer caseTypeId;
+
+    public Integer getCaseTypeId() {
+        return caseTypeId;
+    }
+
+    public void setCaseTypeId(Integer caseTypeId) {
+        this.caseTypeId = caseTypeId;
+    }
 
     private List<CatalogVO> children;
 
@@ -61,5 +75,21 @@ public class CatalogVO {
 
     public void setType(String type) {
         this.type = type == null ? null : type.trim();
+    }
+
+    public Integer getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Integer envId) {
+        this.envId = envId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

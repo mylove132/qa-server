@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.blingabc.auto.dao.WebCaseVOMapper">
-  <resultMap id="BaseResultMap" type="com.blingabc.auto.beans.WebCaseVO">
+<mapper namespace="com.blingabc.auto.dao.CaseVOMapper">
+  <resultMap id="BaseResultMap" type="com.blingabc.auto.beans.CaseVO">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="depend" jdbcType="VARCHAR" property="depend" />
+    <result column="case_type_id" jdbcType="INTEGER" property="caseTypeId" />
+    <result column="catalog_id" jdbcType="INTEGER" property="catalogId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.blingabc.auto.beans.WebCaseVO">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.blingabc.auto.beans.CaseVO">
     <result column="cases" jdbcType="LONGVARCHAR" property="cases" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, create_time, update_time, depend
+    id, name, create_time, update_time, depend, case_type_id, catalog_id
   </sql>
   <sql id="Blob_Column_List">
     cases
@@ -22,23 +24,23 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from entity_web_case
+    from entity_case
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from entity_web_case
+    delete from entity_case
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.blingabc.auto.beans.WebCaseVO">
-    insert into entity_web_case (id, name, create_time, 
-      update_time, depend, cases
-      )
+  <insert id="insert" parameterType="com.blingabc.auto.beans.CaseVO">
+    insert into entity_case (id, name, create_time, 
+      update_time, depend, case_type_id, 
+      catalog_id, cases)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{depend,jdbcType=VARCHAR}, #{cases,jdbcType=LONGVARCHAR}
-      )
+      #{updateTime,jdbcType=TIMESTAMP}, #{depend,jdbcType=VARCHAR}, #{caseTypeId,jdbcType=INTEGER}, 
+      #{catalogId,jdbcType=INTEGER}, #{cases,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.blingabc.auto.beans.WebCaseVO">
-    insert into entity_web_case
+  <insert id="insertSelective" parameterType="com.blingabc.auto.beans.CaseVO">
+    insert into entity_case
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -54,6 +56,12 @@
       </if>
       <if test="depend != null">
         depend,
+      </if>
+      <if test="caseTypeId != null">
+        case_type_id,
+      </if>
+      <if test="catalogId != null">
+        catalog_id,
       </if>
       <if test="cases != null">
         cases,
@@ -75,13 +83,19 @@
       <if test="depend != null">
         #{depend,jdbcType=VARCHAR},
       </if>
+      <if test="caseTypeId != null">
+        #{caseTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="catalogId != null">
+        #{catalogId,jdbcType=INTEGER},
+      </if>
       <if test="cases != null">
         #{cases,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.beans.WebCaseVO">
-    update entity_web_case
+  <update id="updateByPrimaryKeySelective" parameterType="com.blingabc.auto.beans.CaseVO">
+    update entity_case
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
@@ -95,27 +109,50 @@
       <if test="depend != null">
         depend = #{depend,jdbcType=VARCHAR},
       </if>
+      <if test="caseTypeId != null">
+        case_type_id = #{caseTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="catalogId != null">
+        catalog_id = #{catalogId,jdbcType=INTEGER},
+      </if>
       <if test="cases != null">
         cases = #{cases,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blingabc.auto.beans.WebCaseVO">
-    update entity_web_case
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.blingabc.auto.beans.CaseVO">
+    update entity_case
     set name = #{name,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       depend = #{depend,jdbcType=VARCHAR},
+      case_type_id = #{caseTypeId,jdbcType=INTEGER},
+      catalog_id = #{catalogId,jdbcType=INTEGER},
       cases = #{cases,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.beans.WebCaseVO">
-    update entity_web_case
+  <update id="updateByPrimaryKey" parameterType="com.blingabc.auto.beans.CaseVO">
+    update entity_case
     set name = #{name,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      depend = #{depend,jdbcType=VARCHAR}
+      depend = #{depend,jdbcType=VARCHAR},
+      case_type_id = #{caseTypeId,jdbcType=INTEGER},
+      catalog_id = #{catalogId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="queryCaseListFilter" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from entity_case
+    <if test="catalogId != null">
+      where catalog_id = #{catalogId}
+    </if>
+    <if test="caseTypeId != null">
+      AND case_type_id = #{caseTypeId}
+    </if>
+  </select>
 </mapper>

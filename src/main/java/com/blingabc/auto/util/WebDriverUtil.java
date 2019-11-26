@@ -3,13 +3,13 @@ package com.blingabc.auto.util;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.blingabc.auto.beans.AssertVO;
+import com.blingabc.auto.beans.CaseVO;
 import com.blingabc.auto.beans.ElementVO;
 import com.blingabc.auto.beans.PageVO;
-import com.blingabc.auto.beans.WebCaseVO;
 import com.blingabc.auto.dao.AssertVOMapper;
+import com.blingabc.auto.dao.CaseVOMapper;
 import com.blingabc.auto.dao.ElementVOMapper;
 import com.blingabc.auto.dao.PageVOMapper;
-import com.blingabc.auto.dao.WebCaseVOMapper;
 import com.blingabc.auto.exception.BizException;
 import com.blingabc.auto.vo.response.TestCaseResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.testng.Assert;
 
 import java.io.File;
@@ -44,7 +43,7 @@ public class WebDriverUtil {
     private PageVOMapper pageVOMapper;
 
     @Autowired
-    private WebCaseVOMapper webCaseVOMapper;
+    private CaseVOMapper caseVOMapper;
 
     @Value("${fail_img_path}")
     private String failImgPath;
@@ -124,14 +123,14 @@ public class WebDriverUtil {
     private List<TestCaseResponse> exec(List<TestCaseResponse> responses, WebDriver driver, int webCaseId){
         TestCaseResponse testCaseResponse = new TestCaseResponse();
         try {
-            WebCaseVO webCaseVO = webCaseVOMapper.selectByPrimaryKey(webCaseId);
-            if (webCaseVO == null){
+            CaseVO caseVO = caseVOMapper.selectByPrimaryKey(webCaseId);
+            if (caseVO == null){
                 throw new BizException(String.format("执行的用例id：{}不存在", webCaseId));
             }
             testCaseResponse.setStartTime(System.currentTimeMillis());
-            testCaseResponse.setCaseName(webCaseVO.getName());
-            System.out.println(webCaseVO.getCases());
-            List<Map> cases = JSONArray.parseArray(webCaseVO.getCases(), Map.class);
+            testCaseResponse.setCaseName(caseVO.getName());
+            System.out.println(caseVO.getCases());
+            List<Map> cases = JSONArray.parseArray(caseVO.getCases(), Map.class);
             cases.sort(new Comparator<Map>() {
                 @Override
                 public int compare(Map o1, Map o2) {
@@ -214,13 +213,13 @@ public class WebDriverUtil {
             throw new BizException("执行的用例不能为空");
         }
         for (Integer webCaseId : webCaseIds) {
-            WebCaseVO webCaseVO = webCaseVOMapper.selectByPrimaryKey(webCaseId);
-            if (webCaseVO == null) {
+            CaseVO caseVO = caseVOMapper.selectByPrimaryKey(webCaseId);
+            if (caseVO == null) {
                 throw new BizException("执行的用例id不存在");
             }
-            log.info("执行用例:{}", webCaseVO.getName());
-            if (webCaseVO.getDepend() != null) {
-                List<Map> dependList = JSONArray.parseArray(webCaseVO.getDepend(), Map.class);
+            log.info("执行用例:{}", caseVO.getName());
+            if (caseVO.getDepend() != null) {
+                List<Map> dependList = JSONArray.parseArray(caseVO.getDepend(), Map.class);
                 if (dependList.size() > 1) {
                     dependList.sort(new Comparator<Map>() {
                         @Override
@@ -231,7 +230,7 @@ public class WebDriverUtil {
                 }
                 for (Map<String, Object> dp : dependList) {
                     int caseId = Integer.parseInt(dp.get("id").toString());
-                    WebCaseVO webBean = webCaseVOMapper.selectByPrimaryKey(caseId);
+                    CaseVO webBean = caseVOMapper.selectByPrimaryKey(caseId);
                     int i = 0;
                     if (webBean != null) {
                         int[] lw = new int[]{caseId};
@@ -243,6 +242,11 @@ public class WebDriverUtil {
         }
         return responses;
     }
+
+    public String generateScriptCase(int[] webCaseIds){
+        return "";
+    }
+
 
     public void open(WebDriver driver, PageVO pageVO) {
         log.info("打开的url地址：{}", pageVO.getVal());

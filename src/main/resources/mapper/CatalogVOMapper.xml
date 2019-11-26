@@ -6,6 +6,9 @@
     <result column="text" jdbcType="VARCHAR" property="text" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="env_id" jdbcType="INTEGER" property="envId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="case_type_id" jdbcType="INTEGER" property="caseTypeId" />
     <result column="type" jdbcType="VARCHAR" property="type" />
   </resultMap>
   <resultMap id="BaseTreeMap" type="com.blingabc.auto.beans.CatalogVO">
@@ -14,11 +17,14 @@
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="env_id" jdbcType="INTEGER" property="envId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="case_type_id" jdbcType="INTEGER" property="caseTypeId" />
     <collection column="id" property="children" javaType="java.util.ArrayList"
                 ofType="com.blingabc.auto.beans.CatalogVO" select="getCatalogChildrens"/>
   </resultMap>
   <sql id="Base_Column_List">
-    id, text, icon, parent_id, type
+    id, text, icon, parent_id, type,env_id,user_id,case_type_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -32,15 +38,24 @@
   </delete>
   <insert id="insert" parameterType="com.blingabc.auto.beans.CatalogVO">
     insert into entity_catalog (id, text, icon, 
-      parent_id, type)
+      parent_id, type,env_id,user_id,case_type_id)
     values (#{id,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
-      #{parentId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR})
+      #{parentId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR},(#{envId,jdbcType=INTEGER}),(#{userId,jdbcType=INTEGER}),(#{caseTypeId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.blingabc.auto.beans.CatalogVO">
     insert into entity_catalog
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="envId != null">
+        env_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="caseTypeId != null">
+        case_type_id,
       </if>
       <if test="text != null">
         text,
@@ -58,6 +73,15 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
+      </if>
+      <if test="envId != null">
+        #{envId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="caseTypeId != null">
+        #{caseTypeId,jdbcType=INTEGER},
       </if>
       <if test="text != null">
         #{text,jdbcType=VARCHAR},
@@ -83,7 +107,16 @@
         icon = #{icon,jdbcType=VARCHAR},
       </if>
       <if test="parentId != null">
-        parent_id = #{parentId,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=INTEGER},
+    </if>
+      <if test="envId != null">
+        env_id = #{envId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="caseTypeId != null">
+        case_type_id = #{caseTypeId,jdbcType=INTEGER},
       </if>
       <if test="type != null">
         type = #{type,jdbcType=VARCHAR},
@@ -96,6 +129,9 @@
     set text = #{text,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
       parent_id = #{parentId,jdbcType=INTEGER},
+      env_id = #{envId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      case_type_id = #{caseTypeId,jdbcType=INTEGER},
       type = #{type,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -103,7 +139,17 @@
     select
     <include refid="Base_Column_List" />
     from entity_catalog
-    WHERE parent_id ='' or parent_id is NULL AND type=#{type}
+    WHERE parent_id ='' or parent_id is NULL
+    <if test="caseTypeId != null">
+      AND case_type_id=${caseTypeId}
+    </if>
+    <if test="userId != null">
+      AND user_id=${userId}
+    </if>
+    <if test="envId != null">
+      AND env_id=${envId}
+    </if>
+
   </select>
 
   <select id="getCatalogChildrens" parameterType="java.lang.Integer" resultMap="BaseTreeMap">

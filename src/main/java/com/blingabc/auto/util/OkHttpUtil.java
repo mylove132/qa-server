@@ -89,7 +89,7 @@ public class OkHttpUtil {
             responseVO.setResult(response.body().string());
             responseVO.setErrMsg(null);
         } catch (IOException e) {
-            responseVO.setStatusCode(response.code());
+            responseVO.setStatusCode(-1);
             responseVO.setResult(null);
             responseVO.setErrMsg(e.getMessage());
             log.error("接口请求出错：",e.getMessage());

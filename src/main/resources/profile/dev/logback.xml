@@ -4,7 +4,7 @@
     <!--项目名称，用于log名的前缀-->
     <property name="PROJECT_NAME" value="qa-server" />
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
-    <property name="LOG_HOME" value="//Users/liuzhanhui/lzh/logs/${PROJECT_NAME}" />
+    <property name="LOG_HOME" value="/Users/liuzhanhui/lzh/logs/${PROJECT_NAME}" />
 
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

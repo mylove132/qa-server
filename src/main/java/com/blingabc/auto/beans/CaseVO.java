@@ -2,7 +2,7 @@ package com.blingabc.auto.beans;
 
 import java.util.Date;
 
-public class WebCaseVO {
+public class CaseVO {
     private Integer id;
 
     private String name;
@@ -12,6 +12,10 @@ public class WebCaseVO {
     private Date updateTime;
 
     private String depend;
+
+    private Integer caseTypeId;
+
+    private Integer catalogId;
 
     private String cases;
 
@@ -53,6 +57,22 @@ public class WebCaseVO {
 
     public void setDepend(String depend) {
         this.depend = depend == null ? null : depend.trim();
+    }
+
+    public Integer getCaseTypeId() {
+        return caseTypeId;
+    }
+
+    public void setCaseTypeId(Integer caseTypeId) {
+        this.caseTypeId = caseTypeId;
+    }
+
+    public Integer getCatalogId() {
+        return catalogId;
+    }
+
+    public void setCatalogId(Integer catalogId) {
+        this.catalogId = catalogId;
     }
 
     public String getCases() {

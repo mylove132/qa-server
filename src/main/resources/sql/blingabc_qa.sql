@@ -11,7 +11,7 @@
  Target Server Version : 50728
  File Encoding         : 65001
 
- Date: 15/11/2019 19:04:50
+ Date: 26/11/2019 17:51:13
 */
 
 SET NAMES utf8mb4;
@@ -104,6 +104,54 @@ INSERT INTO `entity_assert` VALUES (2, '判断校招title', 1, '2019-11-13 18:02
 COMMIT;
 
 -- ----------------------------
+-- Table structure for entity_case
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_case`;
+CREATE TABLE `entity_case` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL COMMENT '用例名称',
+  `cases` text,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  `depend` varchar(255) DEFAULT NULL COMMENT '依赖的用例',
+  `case_type_id` int(11) NOT NULL DEFAULT '1',
+  `catalog_id` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `case_type_id` (`case_type_id`),
+  KEY `catalog_id` (`catalog_id`),
+  CONSTRAINT `entity_case_ibfk_1` FOREIGN KEY (`case_type_id`) REFERENCES `entity_case_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_case_ibfk_2` FOREIGN KEY (`catalog_id`) REFERENCES `entity_catalog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of entity_case
+-- ----------------------------
+BEGIN;
+INSERT INTO `entity_case` VALUES (1, '全职登陆用例', '[{\"type\":\"page\",\"id\":1,\"index\":1},{\"type\":\"element\",\"id\":1,\"index\":2},{\"type\":\"element\",\"id\":2,\"index\":3},{\"type\":\"element\",\"id\":3,\"index\":4},{\"type\":\"element\",\"id\":4,\"index\":5}]', '2019-11-13 11:07:30', NULL, NULL, 2, 1);
+INSERT INTO `entity_case` VALUES (2, '搜索功能', '[{\"type\":\"element\",\"id\":5,\"index\":1},{\"type\":\"assert\",\"id\":1,\"index\":2},{\"type\":\"element\",\"id\":6,\"index\":3}]', '2019-11-13 14:36:52', NULL, '[{\"index\":1,\"id\":1}]', 2, 1);
+INSERT INTO `entity_case` VALUES (3, '进入校园招聘', '[{\"type\":\"element\",\"id\":7,\"index\":1},{\"type\":\"assert\",\"id\":2,\"index\":2},{\"type\":\"element\",\"id\":8,\"index\":3}]', '2019-11-13 18:04:33', NULL, '[{\"index\":1,\"id\":2}]', 2, 1);
+COMMIT;
+
+-- ----------------------------
+-- Table structure for entity_case_type
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_case_type`;
+CREATE TABLE `entity_case_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `case_type` varchar(255) NOT NULL DEFAULT 'interface',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of entity_case_type
+-- ----------------------------
+BEGIN;
+INSERT INTO `entity_case_type` VALUES (1, 'interface');
+INSERT INTO `entity_case_type` VALUES (2, 'web');
+INSERT INTO `entity_case_type` VALUES (3, 'app');
+COMMIT;
+
+-- ----------------------------
 -- Table structure for entity_catalog
 -- ----------------------------
 DROP TABLE IF EXISTS `entity_catalog`;
@@ -113,20 +161,30 @@ CREATE TABLE `entity_catalog` (
   `icon` varchar(255) NOT NULL DEFAULT 'el-icon-folder-opened',
   `parent_id` int(11) DEFAULT NULL,
   `type` varchar(255) NOT NULL DEFAULT 'interface',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `env_id` int(11) NOT NULL DEFAULT '1',
+  `user_id` int(11) NOT NULL DEFAULT '1',
+  `case_type_id` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `env_id` (`env_id`),
+  KEY `user_id` (`user_id`),
+  KEY `case_type_id` (`case_type_id`),
+  CONSTRAINT `entity_catalog_ibfk_1` FOREIGN KEY (`env_id`) REFERENCES `entity_env` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_catalog_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `entity_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_catalog_ibfk_3` FOREIGN KEY (`case_type_id`) REFERENCES `entity_case_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of entity_catalog
 -- ----------------------------
 BEGIN;
-INSERT INTO `entity_catalog` VALUES (1, '首页目录', 'el-icon-folder-opened', NULL, 'interface');
-INSERT INTO `entity_catalog` VALUES (2, '语文目录', 'el-icon-folder-opened', NULL, 'interface');
-INSERT INTO `entity_catalog` VALUES (3, '数学目录', 'el-icon-folder-opened', NULL, 'interface');
-INSERT INTO `entity_catalog` VALUES (4, '课程表', 'el-icon-folder-opened', 1, 'interface');
-INSERT INTO `entity_catalog` VALUES (5, '课外作业', 'el-icon-folder-opened', 1, 'interface');
-INSERT INTO `entity_catalog` VALUES (6, '学生课程表', 'el-icon-folder-opened', 4, 'interface');
-INSERT INTO `entity_catalog` VALUES (7, '老师课程表', 'el-icon-folder-opened', 4, 'interface');
+INSERT INTO `entity_catalog` VALUES (1, '首页目录', 'el-icon-folder-opened', NULL, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (2, '语文目录', 'el-icon-folder-opened', NULL, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (3, '数学目录', 'el-icon-folder-opened', NULL, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (4, '课程表', 'el-icon-folder-opened', 1, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (5, '课外作业', 'el-icon-folder-opened', 1, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (6, '学生课程表', 'el-icon-folder-opened', 4, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (7, '老师课程表', 'el-icon-folder-opened', 4, 'interface', 1, 1, 1);
+INSERT INTO `entity_catalog` VALUES (8, '英语作业', 'el-icon-folder-opened', NULL, 'interface', 1, 1, 1);
 COMMIT;
 
 -- ----------------------------
@@ -165,6 +223,81 @@ INSERT INTO `entity_element` VALUES (8, '校招按钮', 1, '/html/body/div[2]/di
 COMMIT;
 
 -- ----------------------------
+-- Table structure for entity_env
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_env`;
+CREATE TABLE `entity_env` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `env` varchar(255) NOT NULL DEFAULT 'dev',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of entity_env
+-- ----------------------------
+BEGIN;
+INSERT INTO `entity_env` VALUES (1, 'dev');
+INSERT INTO `entity_env` VALUES (2, 'hotfix');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for entity_env_variable
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_env_variable`;
+CREATE TABLE `entity_env_variable` (
+  `id` int(11) NOT NULL,
+  `c_key` varchar(255) DEFAULT NULL,
+  `c_value` varchar(255) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `env_id` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `env_id` (`env_id`),
+  CONSTRAINT `entity_env_variable_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `entity_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_env_variable_ibfk_2` FOREIGN KEY (`env_id`) REFERENCES `entity_env` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for entity_interface_case
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_interface_case`;
+CREATE TABLE `entity_interface_case` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `protocol_id` int(11) NOT NULL DEFAULT '1',
+  `catalog_id` int(11) NOT NULL DEFAULT '1',
+  `param_type` varchar(255) NOT NULL DEFAULT 'form',
+  `param` text,
+  `header` text,
+  `cookie` text,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  `request_way_id` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `protocol_id` (`protocol_id`),
+  KEY `catalog_id` (`catalog_id`),
+  KEY `reqyest_way_id` (`request_way_id`),
+  CONSTRAINT `entity_interface_case_ibfk_1` FOREIGN KEY (`protocol_id`) REFERENCES `entity_protocol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_interface_case_ibfk_2` FOREIGN KEY (`catalog_id`) REFERENCES `entity_catalog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `entity_interface_case_ibfk_3` FOREIGN KEY (`request_way_id`) REFERENCES `request_way` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of entity_interface_case
+-- ----------------------------
+BEGIN;
+INSERT INTO `entity_interface_case` VALUES (1, '百度首页', 'http://www.baidu.com', 1, 1, '', NULL, '{\"name\":\"zhangsan\"}', NULL, '2019-11-21 02:08:32', NULL, 1);
+INSERT INTO `entity_interface_case` VALUES (2, '百度首页', 'http://127.0.0.1:9999/api/interface/case', 1, 4, 'form', '{\"url\":\"http://www.baidu.com\",\"name\":\"百度首页\",\"protocolId\":\"1\",\"catalogId\":\"1\",\"paramType\":\"\",\"header\":\"{\\\"name\\\":\\\"zhangsan\\\"}\"}', '{}', NULL, '2019-11-21 02:39:37', NULL, 1);
+INSERT INTO `entity_interface_case` VALUES (3, '百度测试post首页', 'http://www.baidu.com', 1, 6, 'form', '{\"name\":\"zhangsan\",\"value\":\"129389123\"}', '{\"requestid\":\"qa_00900901\"}', NULL, '2019-11-21 02:49:29', NULL, 1);
+INSERT INTO `entity_interface_case` VALUES (4, '测试首页', 'http://www.baidu.com', 1, 3, 'form', '{\"name\":\"zhangsan\",\"value\":\"129389123\"}', '{\"requestid\":\"qa_00900901\"}', NULL, '2019-11-21 02:50:39', NULL, 1);
+INSERT INTO `entity_interface_case` VALUES (5, '测试首页关闭', 'http://www.baidu.com', 1, 1, 'form', '{\"name\":\"zhangsan\",\"password\":\"qa_09201901\"}', '{\"request_id\":\"qa_090901\",\"Content-Type\":\"json\"}', NULL, '2019-11-21 05:36:00', NULL, 1);
+INSERT INTO `entity_interface_case` VALUES (6, 'testerhome', 'http://testerhome.baidu.com', 1, 1, 'form', '{\"id\":\"109091\",\"name\":\"zhanshan\"}', '{\"requestid\":\"qa_090901\"}', NULL, '2019-11-21 05:40:51', NULL, 1);
+COMMIT;
+
+-- ----------------------------
 -- Table structure for entity_page
 -- ----------------------------
 DROP TABLE IF EXISTS `entity_page`;
@@ -189,26 +322,74 @@ INSERT INTO `entity_page` VALUES (2, '退出登陆用例', NULL, '2019-11-13 13:
 COMMIT;
 
 -- ----------------------------
--- Table structure for entity_web_case
+-- Table structure for entity_protocol
 -- ----------------------------
-DROP TABLE IF EXISTS `entity_web_case`;
-CREATE TABLE `entity_web_case` (
+DROP TABLE IF EXISTS `entity_protocol`;
+CREATE TABLE `entity_protocol` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL COMMENT '用例名称',
-  `cases` text,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
-  `depend` varchar(255) DEFAULT NULL COMMENT '依赖的用例',
+  `protocol` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of entity_web_case
+-- Records of entity_protocol
 -- ----------------------------
 BEGIN;
-INSERT INTO `entity_web_case` VALUES (1, '全职登陆用例', '[{\"type\":\"page\",\"id\":1,\"index\":1},{\"type\":\"element\",\"id\":1,\"index\":2},{\"type\":\"element\",\"id\":2,\"index\":3},{\"type\":\"element\",\"id\":3,\"index\":4},{\"type\":\"element\",\"id\":4,\"index\":5}]', '2019-11-13 11:07:30', NULL, NULL);
-INSERT INTO `entity_web_case` VALUES (2, '搜索功能', '[{\"type\":\"element\",\"id\":5,\"index\":1},{\"type\":\"assert\",\"id\":1,\"index\":2},{\"type\":\"element\",\"id\":6,\"index\":3}]', '2019-11-13 14:36:52', NULL, '[{\"index\":1,\"id\":1}]');
-INSERT INTO `entity_web_case` VALUES (3, '进入校园招聘', '[{\"type\":\"element\",\"id\":7,\"index\":1},{\"type\":\"assert\",\"id\":2,\"index\":2},{\"type\":\"element\",\"id\":8,\"index\":3}]', '2019-11-13 18:04:33', NULL, '[{\"index\":1,\"id\":2}]');
+INSERT INTO `entity_protocol` VALUES (1, 'http');
+INSERT INTO `entity_protocol` VALUES (2, 'websocket');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for entity_request_exception
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_request_exception`;
+CREATE TABLE `entity_request_exception` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` text NOT NULL COMMENT '异常信息',
+  `happend_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '异常产生时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for entity_request_log
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_request_log`;
+CREATE TABLE `entity_request_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `type` int(11) NOT NULL DEFAULT '1' COMMENT '1(普通请求)2（ajax）',
+  `way` varchar(255) NOT NULL DEFAULT 'get' COMMENT '请求方式',
+  `class_path` varchar(255) NOT NULL COMMENT '请求类的路径',
+  `method_name` varchar(255) NOT NULL COMMENT '请求方法名',
+  `param` text NOT NULL COMMENT '请求参数',
+  `operation` varchar(255) DEFAULT NULL COMMENT '操作类型',
+  `sessionid` varchar(200) NOT NULL COMMENT '请求接口唯一session标示',
+  `start_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '请求开始时间',
+  `finish_time` int(11) NOT NULL COMMENT '请求结束时间',
+  `return_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '接口返回时间',
+  `return_data` text NOT NULL COMMENT '返回结果',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for entity_user
+-- ----------------------------
+DROP TABLE IF EXISTS `entity_user`;
+CREATE TABLE `entity_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of entity_user
+-- ----------------------------
+BEGIN;
+INSERT INTO `entity_user` VALUES (1, 'liuzhanhui', '123456', NULL, '1');
 COMMIT;
 
 -- ----------------------------
@@ -231,6 +412,25 @@ INSERT INTO `page_operate` VALUES (3, 'js');
 INSERT INTO `page_operate` VALUES (4, 'switch');
 INSERT INTO `page_operate` VALUES (5, 'close');
 INSERT INTO `page_operate` VALUES (6, 'quit');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for request_way
+-- ----------------------------
+DROP TABLE IF EXISTS `request_way`;
+CREATE TABLE `request_way` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `way` varchar(255) NOT NULL DEFAULT 'get',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of request_way
+-- ----------------------------
+BEGIN;
+INSERT INTO `request_way` VALUES (1, 'get');
+INSERT INTO `request_way` VALUES (2, 'post');
+INSERT INTO `request_way` VALUES (3, 'delete');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

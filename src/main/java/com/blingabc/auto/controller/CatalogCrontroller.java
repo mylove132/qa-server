@@ -5,10 +5,7 @@ import com.blingabc.auto.common.ResultBody;
 import com.blingabc.auto.dao.CatalogVOMapper;
 import com.blingabc.auto.service.ICatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/catalog")
 @RestController
@@ -18,8 +15,8 @@ public class CatalogCrontroller {
     private ICatalogService catalogService;
 
     @RequestMapping(value = "",method = RequestMethod.GET)
-    public ResultBody getCatalogListCrontroller(String type){
-        return ResultBody.success(catalogService.queryCatalogListService(type));
+    public ResultBody getCatalogListCrontroller(@RequestParam(value = "caseTypeId",required = false) Integer caseTypeId, @RequestParam(value = "userId",required = false) Integer userId, @RequestParam(value = "envId",required = false) Integer envId){
+        return ResultBody.success(catalogService.queryCatalogListService(caseTypeId,userId, envId));
     }
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
@@ -29,7 +26,7 @@ public class CatalogCrontroller {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResultBody addCatalogCrontroller(CatalogVO catalogVO){
-        return catalogService.updateCatalogService(catalogVO);
+        return catalogService.addCatalogService(catalogVO);
     }
 
     @RequestMapping(value = "{catalogId}", method = RequestMethod.DELETE)

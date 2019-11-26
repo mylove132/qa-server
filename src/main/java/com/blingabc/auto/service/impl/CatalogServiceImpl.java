@@ -24,8 +24,8 @@ public class CatalogServiceImpl implements ICatalogService{
     private CatalogVOMapper catalogVOMapper;
 
     @Override
-    public List<CatalogVO> queryCatalogListService(String type) {
-        return catalogVOMapper.queryCatalogList(type);
+    public List<CatalogVO> queryCatalogListService(Integer caseTypeId, Integer userId, Integer envId) {
+        return catalogVOMapper.queryCatalogList(caseTypeId,userId,envId);
     }
 
     @Override

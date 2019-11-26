@@ -18,5 +18,5 @@ public interface CatalogVOMapper {
 
     int updateByPrimaryKey(CatalogVO record);
 
-    List<CatalogVO> queryCatalogList(@RequestParam("type") String type);
+    List<CatalogVO> queryCatalogList(@RequestParam("caseTypeId") Integer caseTypeId, @RequestParam(value = "userId") Integer userId, @RequestParam("envId") Integer envId);
 }

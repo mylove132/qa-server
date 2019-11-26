@@ -1,9 +1,5 @@
 package com.blingabc.auto.vo.request;
 
-import com.blingabc.auto.beans.WebCaseVO;
-
-import java.util.List;
-
 public class ExecWebCaseVO {
     private String registerUrl;
     private String platform;
