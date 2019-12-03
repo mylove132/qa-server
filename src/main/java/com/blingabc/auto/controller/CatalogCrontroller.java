@@ -1,8 +1,8 @@
 package com.blingabc.auto.controller;
 
+import com.blingabc.auto.annotion.Operation;
 import com.blingabc.auto.beans.CatalogVO;
 import com.blingabc.auto.common.ResultBody;
-import com.blingabc.auto.dao.CatalogVOMapper;
 import com.blingabc.auto.service.ICatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,21 +14,25 @@ public class CatalogCrontroller {
     @Autowired
     private ICatalogService catalogService;
 
+    @Operation("查询目录列表")
     @RequestMapping(value = "",method = RequestMethod.GET)
     public ResultBody getCatalogListCrontroller(@RequestParam(value = "caseTypeId",required = false) Integer caseTypeId, @RequestParam(value = "userId",required = false) Integer userId, @RequestParam(value = "envId",required = false) Integer envId){
         return ResultBody.success(catalogService.queryCatalogListService(caseTypeId,userId, envId));
     }
 
+    @Operation("修改目录")
     @RequestMapping(value = "", method = RequestMethod.PUT)
     public ResultBody updateCatalogCrontroller(CatalogVO catalogVO){
         return catalogService.updateCatalogService(catalogVO);
     }
 
+    @Operation("添加目录")
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResultBody addCatalogCrontroller(CatalogVO catalogVO){
         return catalogService.addCatalogService(catalogVO);
     }
 
+    @Operation("删除目录")
     @RequestMapping(value = "{catalogId}", method = RequestMethod.DELETE)
     public ResultBody delCatalogCrontroller(@PathVariable("catalogId") int catalogId){
         return catalogService.delCatalogService(catalogId);

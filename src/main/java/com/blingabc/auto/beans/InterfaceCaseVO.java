@@ -9,6 +9,8 @@ public class InterfaceCaseVO {
 
     private String url;
 
+    private Integer assertId;
+
     private Integer protocolId;
 
     private Integer catalogId;
@@ -20,6 +22,8 @@ public class InterfaceCaseVO {
     private Date createTime;
 
     private Date updateTime;
+
+    private AssertVO assertVO;
 
     public Integer getId() {
         return id;
@@ -43,6 +47,14 @@ public class InterfaceCaseVO {
 
     public Integer getRequestWayId() {
         return requestWayId;
+    }
+
+    public Integer getAssertId() {
+        return assertId;
+    }
+
+    public void setAssertId(Integer assertId) {
+        this.assertId = assertId;
     }
 
     public void setRequestWayId(Integer requestWayId) {
@@ -91,5 +103,13 @@ public class InterfaceCaseVO {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public AssertVO getAssertVO() {
+        return assertVO;
+    }
+
+    public void setAssertVO(AssertVO assertVO) {
+        this.assertVO = assertVO;
     }
 }

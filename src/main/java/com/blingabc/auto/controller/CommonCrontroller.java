@@ -1,6 +1,7 @@
 package com.blingabc.auto.controller;
 
 import com.blingabc.auto.common.ResultBody;
+import com.blingabc.auto.dao.AssertTypeVOMapper;
 import com.blingabc.auto.dao.CaseTypeVOMapper;
 import com.blingabc.auto.dao.EnvVOMapper;
 import com.blingabc.auto.dao.RequestWayVOMapper;
@@ -21,6 +22,9 @@ public class CommonCrontroller {
     @Autowired
     private EnvVOMapper envVOMapper;
 
+    @Autowired
+    private AssertTypeVOMapper assertTypeVOMapper;
+
     @RequestMapping("request_way")
     public ResultBody requestWayListCrontroller(){
         return ResultBody.success(requestWayVOMapper.queryList());
@@ -34,5 +38,10 @@ public class CommonCrontroller {
     @RequestMapping("case_type")
     public ResultBody caseTypeListCrontroller(){
         return ResultBody.success(caseTypeVOMapper.queryList());
+    }
+
+    @RequestMapping("assert_type")
+    public ResultBody assertTypeListCrontroller(){
+        return ResultBody.success(assertTypeVOMapper.queryList());
     }
 }

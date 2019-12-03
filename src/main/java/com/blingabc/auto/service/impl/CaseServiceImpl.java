@@ -16,8 +16,13 @@ public class CaseServiceImpl implements ICaseService {
     private CaseVOMapper caseVOMapper;
 
     @Override
-    public ResultBody caseListService(Integer catalogId, Integer caseTypeId,Integer pageNum, Integer pageSize) throws BizException {
+    public ResultBody caseListService(Integer catalogId,Integer pageNum, Integer pageSize) throws BizException {
         PageHelper.startPage(pageNum, pageSize);
-        return ResultBody.success(new PageInfo(caseVOMapper.queryCaseListFilter(catalogId,caseTypeId)));
+        return ResultBody.success(new PageInfo(caseVOMapper.queryCaseListFilter(catalogId)));
+    }
+
+    @Override
+    public ResultBody delCaseListService(int[] caseIds) throws BizException {
+        return ResultBody.success(caseVOMapper.delCaseListById(caseIds));
     }
 }

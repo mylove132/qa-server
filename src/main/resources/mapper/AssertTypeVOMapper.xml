@@ -55,4 +55,9 @@
     set type = #{type,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="queryList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from assert_type
+  </select>
 </mapper>

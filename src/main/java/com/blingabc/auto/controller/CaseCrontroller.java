@@ -1,5 +1,6 @@
 package com.blingabc.auto.controller;
 
+import com.blingabc.auto.annotion.Operation;
 import com.blingabc.auto.common.ResultBody;
 import com.blingabc.auto.exception.BizException;
 import com.blingabc.auto.service.ICaseService;
@@ -72,9 +73,16 @@ public class CaseCrontroller {
         return ResultBody.success();
     }
 
-    @RequestMapping(value = "",method = RequestMethod.GET)
-    public ResultBody caseListCrontroller(Integer catalogId, Integer caseTypeId,@RequestParam(defaultValue = "1",value = "currentPage") Integer pageNum,
-                                           @RequestParam(defaultValue = "10",value = "pageSize") Integer pageSize){
-        return caseService.caseListService(catalogId,caseTypeId,pageNum,pageSize);
+    @Operation("查询用例列表")
+    @RequestMapping(method = RequestMethod.GET)
+    public ResultBody caseListCrontroller(Integer catalogId, @RequestParam(defaultValue = "1",value = "currentPage") Integer pageNum,
+                                           @RequestParam(defaultValue = "5",value = "pageSize") Integer pageSize){
+        return caseService.caseListService(catalogId,pageNum,pageSize);
+    }
+
+    @Operation("删除用例")
+    @RequestMapping(method = RequestMethod.DELETE)
+    public ResultBody delCaseListCrontroller(int[] caseIds){
+        return caseService.delCaseListService(caseIds);
     }
 }

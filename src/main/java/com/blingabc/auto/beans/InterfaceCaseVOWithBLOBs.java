@@ -7,6 +7,8 @@ public class InterfaceCaseVOWithBLOBs extends InterfaceCaseVO {
 
     private String cookie;
 
+    private String assertObj;
+
     public String getParam() {
         return param;
     }
@@ -29,5 +31,13 @@ public class InterfaceCaseVOWithBLOBs extends InterfaceCaseVO {
 
     public void setCookie(String cookie) {
         this.cookie = cookie == null ? null : cookie.trim();
+    }
+
+    public String getAssertObj() {
+        return assertObj;
+    }
+
+    public void setAssertObj(String assertObj) {
+        this.assertObj = assertObj;
     }
 }

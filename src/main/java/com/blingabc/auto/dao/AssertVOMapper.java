@@ -14,4 +14,7 @@ public interface AssertVOMapper {
     int updateByPrimaryKeySelective(AssertVO record);
 
     int updateByPrimaryKey(AssertVO record);
+
+    void insertAssertReturnId(AssertVO assertVO);
+
 }

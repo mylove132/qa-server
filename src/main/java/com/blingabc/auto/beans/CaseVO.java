@@ -13,8 +13,6 @@ public class CaseVO {
 
     private String depend;
 
-    private Integer caseTypeId;
-
     private Integer catalogId;
 
     private String cases;
@@ -57,14 +55,6 @@ public class CaseVO {
 
     public void setDepend(String depend) {
         this.depend = depend == null ? null : depend.trim();
-    }
-
-    public Integer getCaseTypeId() {
-        return caseTypeId;
-    }
-
-    public void setCaseTypeId(Integer caseTypeId) {
-        this.caseTypeId = caseTypeId;
     }
 
     public Integer getCatalogId() {

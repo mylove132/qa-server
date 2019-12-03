@@ -2,6 +2,8 @@ package com.blingabc.auto.dao;
 
 import com.blingabc.auto.beans.AssertTypeVO;
 
+import java.util.List;
+
 public interface AssertTypeVOMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface AssertTypeVOMapper {
     int updateByPrimaryKeySelective(AssertTypeVO record);
 
     int updateByPrimaryKey(AssertTypeVO record);
+
+    List<AssertTypeVO> queryList();
 }

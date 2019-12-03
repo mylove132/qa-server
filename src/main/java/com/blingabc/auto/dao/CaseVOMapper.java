@@ -20,5 +20,8 @@ public interface CaseVOMapper {
 
     int updateByPrimaryKey(CaseVO record);
 
-    List<CaseVO> queryCaseListFilter(@RequestParam(value = "catalogId",required = false) Integer catalogId, @RequestParam(value = "caseTypeId",required = false)Integer caseTypeId);
+    List<CaseVO> queryCaseListFilter(@RequestParam(value = "catalogId",required = false) Integer catalogId);
+
+    boolean delCaseListById(int[] caseIds);
+
 }
